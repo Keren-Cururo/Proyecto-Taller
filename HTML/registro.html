@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+    <link rel="stylesheet" href="/css/registro.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Registro de Usuario</h2>
+        <form id="registerForm" action="http://localhost:3000/usuarios/register" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="nombreUsuario">Nombre</label>
+                <input type="text" id="nombreUsuario" name="nombreUsuario" required>
+            </div>
+            <div class="form-group">
+                <label for="apellidoUsuario">Apellido</label>
+                <input type="text" id="apellidoUsuario" name="apellidoUsuario" required>
+            </div>
+            <div class="form-group">
+                <label for="correoElectronico">Correo Electrónico</label>
+                <input type="email" id="correoElectronico" name="correoElectronico" required>
+            </div>
+            <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" required>
+            </div>
+            <div class="form-group">
+                <label for="fechaNacimiento">Fecha de Nacimiento</label>
+                <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="idGenero">Género</label>
+                <select id="idGenero" name="idGenero" required>
+                    <option value="1">Femenino</option>
+                    <option value="2">Masculino</option>
+                    <option value="4">Binario</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="idRol">Rol</label>
+                <select id="idRol" name="idRol" required>
+                    <option value="5">Administrador</option>
+                    <option value="6">Empleado</option>
+                    <option value="9">Proveedor</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="idLocalidad">Localidad</label>
+                <select id="idLocalidad" name="idLocalidad" required>
+                    <option value="1">Merlo</option>
+                    <option value="2">Moron</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="imageName">Imagen</label>
+                <input type="file" id="imageName" name="imageName" accept=".png, .jpg, .jpeg" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Registrar</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            const fileInput = document.getElementById('imageName');
+            const file = fileInput.files[0];
+            if (file) {
+                const validTypes = ['image/png', 'image/jpeg', 'image/jpg'];
+                if (!validTypes.includes(file.type)) {
+                    alert('Solo se permiten archivos de tipo PNG o JPG.');
+                    event.preventDefault();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

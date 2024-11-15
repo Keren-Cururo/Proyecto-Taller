@@ -12,6 +12,7 @@ function saveImage(file) {
 }
 
 
+//METODO POST///
 
 const registerUsuario = (req, res) => {
     console.log(req.file);
@@ -59,14 +60,14 @@ const registerUsuario = (req, res) => {
             );
 
             // Enviar la respuesta con el token
-            const userCreado = { ...req.body, id: userId };
-            res.status(201).send({ userCreado, token });
+            const userCreado = { ...req.body, id: result.insertId };
+            res.status(201).json({ userCreado, token });
         });
     });
 };
 
 
-
+//realizar autenticacion e integracion 
 
 // Función para hacer login
 const loginUsuario = (req, res) => {
