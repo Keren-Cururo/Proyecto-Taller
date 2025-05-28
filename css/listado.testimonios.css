@@ -14,3 +14,9 @@
   background-color: #bd8f1a !important; 
 }
 
+.table-generos th {
+  font-size: 12px; /* o el tamaño que desees */
+  padding: 4px 6px; /* opcional: reduce el espaciado */
+  white-space: nowrap; /* evita saltos de línea */
+  text-align: center; /* opcional: centra el texto */
+}

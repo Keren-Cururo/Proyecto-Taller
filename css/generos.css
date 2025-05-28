@@ -12,3 +12,8 @@
   background-color: #bd8f1a !important; 
 }
 
+.table-generos th,
+.table-generos td {
+  font-size: 12px;
+  padding: 6px 8px;
+}

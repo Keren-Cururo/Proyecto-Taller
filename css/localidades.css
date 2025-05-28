@@ -217,6 +217,15 @@ h1 {
 .table-usuarios td {
   padding: 12px 15px;
 }
+.table-usuarios th:first-child,
+.table-usuarios td:first-child {
+  text-align: left;
+  width: 60px; /* o menos si querés aún más angosto */
+}
+
+
+
+
 
 .table-usuarios tbody tr:nth-of-type(even) {
   background-color: #f3f3f3;
@@ -435,8 +444,17 @@ footer {
 
 .table-generos th,
 .table-generos td {
-  padding: 12px 15px;
+  padding: 12px 15px !important;
+  
 }
+.table-usuarios th {
+  font-size: 12px;  /* Tamaño de letra más chico */
+  padding: 12px 15px; /* Menos espacio interno */
+  white-space: nowrap; /* Que no se corten las palabras */
+  text-align: center; /* Opcional: centrado */
+}
+
+
 
 .table-generos tbody tr {
   border-bottom: 1px solid #dddddd;

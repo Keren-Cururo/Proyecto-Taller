@@ -192,7 +192,12 @@ h3 {
 .form__button:hover {
   background-color: #bd8f1a;
 }
-
+/* Achicar fuente en la tabla de roles */
+.table-roles th,
+.table-roles td {
+  font-size: 12px;
+  padding: 6px 8px;
+}
 /* Tabla de Roles */
 .table-roles {
   width: 100%;
