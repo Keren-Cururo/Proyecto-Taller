@@ -3,10 +3,13 @@ const express = require("express");
 const router = express.Router();
 
 const controller = require("../controllers/generos.controller");
+const verificarToken = require("../middleware/auth.middleware");
+
+
 
 //// METODO GET  /////
 
-// Para todos los productos
+// Para todos los Genero
 router.get('/', controller.allGeneros);
 
 // Para un producto

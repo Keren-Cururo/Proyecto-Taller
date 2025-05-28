@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nuestros Servicios</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/servi.css">
+</head>
+<body>
+  <!-- Header con imagen de fondo a pantalla completa -->
+  <header class="header">
+    <!-- Menú en la parte superior -->
+    <div class="menu container">
+      <a href="#" class="logo"></a>
+      <input type="checkbox" id="menu"/>
+      <label for="menu"></label>
+      <nav class="navbar">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="Acercade.html">Acerca de</a></li>
+          <li><a href="serviciosofi.html">Servicios</a></li>
+          <li><a href="trabajos.html">Trabajos</a></li>
+          <li><a href="Contacto.html">Contacto</a></li>
+          <li><a href="login.html">Iniciar Sesión</a></li>
+        </ul>
+      </nav>
+    </div>
+    
+    <!-- Contenido del header: título y contenedor dinámico -->
+    <div class="header-content container">
+      <h1 class="title">Nuestros Servicios</h1>
+      <div class="row" id="contenedor-servicios"></div>
+    </div> <!-- Fin header-content -->
+  </header>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section about">
+        <h2>Sobre nosotros</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-section links">
+        <h2>Quick Links</h2>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="acercade.html">Acerca de</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="trabajos.html">Trabajos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="login.html">Iniciar Sesión</a></li>
+        </ul>
+      </div>
+      <div class="footer-section contact">
+        <h2>Contactanos</h2>
+        <div class="contact-info">
+          <div><i class="fas fa-map-marker-alt"></i> 647 Linda Street, Phoenixville, PA 19460, USA</div>
+          <div><i class="fas fa-phone"></i> +1 234 567 8900</div>
+          <div><i class="fas fa-envelope"></i> knowmore@email.com</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright © 2020 Online Tutorials. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts de Bootstrap y dependencias -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+  <!-- Script para cargar los servicios dinámicamente -->
+  <script>
+    async function cargarServicios() {
+      const contenedor = document.getElementById('contenedor-servicios');
+      contenedor.innerHTML = '';
+
+      try {
+        const response = await fetch("http://localhost:3000/servicios");
+        if (!response.ok) {
+          throw new Error('Error en la respuesta de la API');
+        }
+
+        const servicios = await response.json();
+
+        servicios.forEach(servicio => {
+          const card = document.createElement('div');
+          card.className = 'col-md-3 col-sm-6 service-card';
+
+          const imagenSrc = servicio.imagen ? `/uploads/${servicio.imagen}` : 'https://via.placeholder.com/300x200';
+
+card.innerHTML = `
+  <div class="card h-100">
+    <img class="card-img-top" src="${imagenSrc}" alt="${servicio.nombre_servicio}">
+    <div class="card-body text-center">
+      <h5 class="card-title">${servicio.nombre_servicio}</h5>
+      <p class="card-text">${servicio.descripcion}</p>
+    </div>
+  </div>
+`;
+
+
+
+          contenedor.appendChild(card);
+        });
+      } catch (error) {
+        console.error('Error cargando servicios:', error);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', cargarServicios);
+  </script>
+</body>
+</html>

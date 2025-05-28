@@ -1,63 +1,78 @@
-/// RUTAS DEL MODULO ///
 const express = require("express");
 const router = express.Router();
 const multer = require("multer"); // multer
-const path = require("path"); // es la ruta interna de los archivos en la pc 
-
+const path = require("path"); // es la ruta interna de los archivos en la pc
 const controller = require("../controllers/usuarios.controller");
+const authMiddleware = require("../middleware/auth.middleware");
 
-// esto es para guardar el archivo 
+
+// Configuración del almacenamiento para multer
 const storage = multer.diskStorage({
-    destination:(req, file, cb) => {
-        cb(null, 'uploads'); // esta carpeta debe existir en el proyecto (raiz)
+    destination: (req, file, cb) => {
+        cb(null, 'uploads'); // Esta carpeta debe existir en la raíz del proyecto
     },
-     //es para nombrar el archivo con la fecha con la cual se subio al sistema 
     filename: (req, file, cb) => {
-        console.log(file);
-        cb(null, Date.now() + path.extname(file.originalname)); // segundos desde 1970
+        cb(null, Date.now() + path.extname(file.originalname)); // Genera un nombre único para la imagen
     },
 });
 
-// es la validacion de las imagenes subidas
+// Configuración de multer con validación de tipo de archivo
 const upload = multer({
     storage,
     fileFilter: (req, file, cb) => {
-        console.log(file);
         const fileTypes = /jpg|jpeg|png/;
         const mimetype = fileTypes.test(file.mimetype);
-        const extname = fileTypes.test(
-            path.extname(file.originalname).toLowerCase()
-        );
-        if(mimetype && path.extname) {
+        const extname = fileTypes.test(path.extname(file.originalname).toLowerCase());
+        if (mimetype && extname) {
             return cb(null, true);
-        };
+        }
         cb("Tipo de archivo no soportado");
     },
-    limits: {fileSize: 1024 * 1024 * 1}, // aprox 1Mb
+    limits: { fileSize: 1024 * 1024 * 1 }, // Aproximadamente 1 MB
 });
 
 
 
-//// METODO GET  /////
-// Para todos los productos
+// Debug adicional para la ruta de registro
+router.post('/register', upload.single('imagen'), (req, res, next) => {
+    console.log("Datos enviados desde el frontend:");
+    console.log("Body:", req.body);// Para depurar datos del formulario
+    console.log("Archivo:", req.file);// Para depurar información del archivo
+    next();
+}, controller.registerUsuario);
+
+// Definición de las rutas
+
+// Ruta para obtener todos los usuarios
 router.get('/', controller.allUsuario);
 
-// Para un producto
+// Ruta para mostrar un usuario por ID
 router.get('/:idUsuario', controller.showUsuario);
 
-//// METODO POST  ////  No se le colocan los dos puntos a id usuario porque al registrarse se crear el id usuario 
-router.post('/register', upload.single('imageName'), controller.registerUsuario); // imagn en bbdd
+router.post('/usuarios', (req, res) => {
+    // Lógica para manejar la solicitud POST
+    res.status(200).send('Usuario creado correctamente');
+  });
+  
+  
+// Ruta para registrar usuarios con subida de imagen
+// router.post('/register', upload.single('imageName'), controller.registerUsuario); // Ajustado aquí}}}}
 
+// Ruta para login de usuario
 router.post('/login', controller.loginUsuario);
 
-// //// METODO PUT  ////
-// router.put('/:id_usuario', controller.updateUsuario);
+// Ruta protegida con autenticación
+router.get('/protected', authMiddleware, (req, res) => {
+    res.status(200).send(`Bienvenido al sistema ${req.userId}`); // Respuesta tras autenticación exitosa
+});
 
-// //// METODO PUT  ////
-router.put('/:idUsuario', upload.single('imageName'), controller.updateUsuario);
+// Ruta para actualizar usuarios con subida de imagen
+router.put('/:idUsuario', upload.single('imagen'), controller.updateUsuario); // Ajustado aquí
 
-//// METODO DELETE ////
+// Ruta para eliminar usuarios
 router.delete('/:idUsuario', controller.destroyUsuario);
 
-// EXPORTAR ROUTERS
+
+
+// Exportar el router
 module.exports = router;

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Listado Géneros</title>
+    <link rel="stylesheet" href="/css/localidades.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"/>
+  </head>
+  
+  <body>
+    <header class="header">
+      <div class="menu containerr">
+        <a href="#" class="logo"></a>
+        <input type="checkbox" id="menu"/>
+        <label for="menu"></label>
+        <nav class="navbar">
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="Acercade.html">Acerca de</a></li>
+            <li><a href="#gestion">Gestión</a>
+              <ul class="submenu">
+                <li><a href="usuarios.html">Usuarios</a></li>
+                <li><a href="listado_testimonios.html">Testimonios</a></li>
+                <li><a href="listado_servicios.html">Servicios</a></li>
+                <li><a href="localidades.html">Localidades</a></li>
+                <li><a href="generos.html">Géneros</a></li>
+                <li><a href="roles.html">Roles</a></li>
+              </ul>
+            </li>
+            <li><a href="Contacto.html">Contacto</a></li>
+            <li><a href="index.html">Salir</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    
+<main class="main">
+  <div class="main__content">
+    <!-- Sección del formulario -->
+    <section class="section section-form">
+      <h3 class="section__title">Género</h3>
+      <form class="form_task" id="formulario">
+        <div class="form-group">
+          <label class="form__label" for="generoID">ID del género:</label>
+          <input type="text" id="generoID" class="form__input2" readonly>
+
+          <label class="form__label" for="generoName">Ingrese el género:</label>
+          <input class="form__input" id="generoName" type="text" placeholder="Género" />
+
+          <div class="button-container">
+            <button type="button" id="btnGuardar" class="form__button">Guardar Género</button>
+            <button type="button" class="form__button" id="btnCancelar" style="display: none;">Cancelar</button>
+          </div>
+        </div>
+      </form>
+      <div class="error"></div>
+    </section>
+
+
+        <!-- Sección del listado -->
+        <div class="right-column">
+          <div class="container-search"> 
+            <button class="toggle-button" id="toggle-search">─</button>
+            <div class="search-content">
+              <h3>Búsqueda por ID</h3>
+              <center>
+                <input id="input-busqueda" class="input-busqueda" placeholder="Ingrese el ID del género"/><br />
+                <button id="buscarElemento">Buscar</button>
+                <button id="btn-mostrarElemento">Mostrar Todos</button>
+              </center>
+            </div>
+          </div>
+
+          <div class="container-data-list">
+            <h3>Listado</h3>
+            <table id="table-generos" class="table-generos">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>NOMBRE</th>
+                  <th>&nbsp;</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Aquí se cargarán los géneros -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+    
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section about">
+          <h2>Sobre nosotros</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-section links">
+          <h2>Quick Links</h2>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="acercade.html">Acerca de</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="trabajos.html">Trabajos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="login.html">Iniciar Sesión</a></li>
+          </ul>
+        </div>
+        <div class="footer-section contact">
+          <h2>Contactanos</h2>
+          <div class="contact-info">
+            <div><i class="fas fa-map-marker-alt"></i> 647 Linda Street, Phoenixville, PA 19460, USA</div>
+            <div><i class="fas fa-phone"></i> +1 234 567 8900</div>
+            <div><i class="fas fa-envelope"></i> knowmore@email.com</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2020 Online Tutorials. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="/JS/eventogene.js"></script>
+  </body>
+</html>

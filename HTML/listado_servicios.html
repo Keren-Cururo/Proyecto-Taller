@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestión de Servicios</title>
+    <link rel="stylesheet" href="/css/listado.servicios.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    
+    <!-- Estilos adicionales para los scrolls y búsqueda -->
+    <style>
+      /* Scrolls en el contenedor de listado */
+      .container-data-list {
+        max-height: 400px;
+        overflow-y: auto;
+        overflow-x: auto;
+        margin-top: 20px;
+      }
+      .table-servicios {
+        width: 100%;
+        min-width: 800px;
+        border-collapse: collapse;
+      }
+
+      .container-search {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .input-busqueda {
+        width: 80%;
+        padding: 10px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 15px;
+      }
+      .button-container {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      button {
+        padding: 10px 15px;
+        font-size: 14px;
+        border: none;
+        border-radius: 5px;
+        background-color: #000;
+        color: #fff;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #555;
+      }
+
+      .form__img {
+        max-width: 120px;
+        max-height: 120px;
+        margin-top: 10px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+      }
+      .preview-container {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="menu containerr">
+        <a href="#" class="logo"></a>
+        <input type="checkbox" id="menu" />
+        <label for="menu"></label>
+        <nav class="navbar">
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="Acercade.html">Acerca de</a></li>
+            <li>
+              <a href="#gestion">Gestión</a>
+              <ul class="submenu">
+                <li><a href="usuarios.html">Usuarios</a></li>
+                <li><a href="listado_testimonios.html">Testimonios</a></li>
+                <li><a href="listado_servicios.html">Servicios</a></li>
+                <li><a href="localidades.html">Localidades</a></li>
+                <li><a href="generos.html">Géneros</a></li>
+                <li><a href="roles.html">Roles</a></li>
+              </ul>
+            </li>
+            <li><a href="Contacto.html">Contacto</a></li>
+            <li><a href="index.html">Salir</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="main">
+      <div class="main__content">
+        <!-- Sección del Formulario a la Izquierda -->
+        <section class="section section-form">
+          <h3 class="section__title">Formulario de Servicios</h3>
+          <form class="form_task" id="formulario-servicios">
+            <div class="form-group">
+              <label class="form__label" for="serviceID">ID del Servicio</label>
+              <input type="text" id="serviceID" class="form__input2" readonly />
+
+              <label class="form__label" for="serviceName">Nombre del Servicio</label>
+              <input class="form__input3" id="serviceName" type="text" placeholder="Nombre_servicio" />
+
+              <label class="form__label" for="serviceDescription">Descripción</label>
+              <textarea class="form__input4" id="serviceDescription" placeholder="descripcion"></textarea>
+             <!-- Imagen con vista previa -->
+             <label class="form__label" for="imagen">Imagen del servicio</label>
+             <input type="file" id="imagen" name="imageName" accept=".png, .jpg, .jpeg" />
+             <div class="preview-container">
+             <!-- Se quitó el style="display: none;" -->
+             <img id="imagenPreview" class="form__img" alt="Vista previa de la imagen" />
+            </div>
+
+ 
+      <div class="button-container">
+      <button type="button" id="btnGuardar" class="form__button">Guardar Servicio</button>
+      <button type="button" id="btnCancelar" class="form__button" style="display: none;">Cancelar</button>
+      </div>
+
+          </form>
+        </section>
+
+        <!-- Sección del Listado a la Derecha -->
+        <div class="right-column">
+          <div class="container-search">
+            <h3>Buscar POR ID</h3>
+            <input id="input-busqueda" class="input-busqueda" placeholder="Ingrese el ID del servicio" />
+            <div class="button-container">
+              <button id="buscarServicio">Buscar</button>
+              <button id="btn-mostrarTodos">Mostrar Todos</button>
+            </div>
+          </div>
+          <div class="container-data-list">
+            <h3>Listado de Servicios</h3>
+            <table id="table-servicios" class="table-servicios">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Nombre</th>
+                  <th>Descripción</th>
+                  <th>Imagen</th>
+                  <th>Fecha alta</th>
+                  <th>&nbsp;</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Las filas se generarán dinámicamente aquí -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+   <footer>
+    <div class="footer-container">
+        <div class="footer-section about">
+            <h2>Sobre nosotros</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="footer-section links">
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="acercade.html">Acerca de</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="trabajos.html">Trabajos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="login.html">Iniciar Sesión</a></li>
+            </ul>
+        </div>
+        <div class="footer-section contact">
+            <h2>Contactanos</h2>
+            <div class="contact-info">
+                <div><i class="fas fa-map-marker-alt"></i> 647 Linda Street, Phoenixville, PA 19460, USA</div>
+                <div><i class="fas fa-phone"></i> +1 234 567 8900</div>
+                <div><i class="fas fa-envelope"></i> knowmore@email.com</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>Copyright © 2020 Online Tutorials. All Rights Reserved.</p>
+    </div>
+</footer>
+
+
+    <!-- Scripts -->
+    <script src="/JS/eventoservi.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  
+  </body>
+</html>

@@ -1,51 +1,154 @@
-<html lang="es"></html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
-
-    <title>Taller</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrusel de Trabajos</title>
+  <link rel="stylesheet" href="/css/trabajos.css">
 </head>
 <body>
-    <header class="header" >
-        <div class="menu container">
-            <a href="#" class="logo"></a>
-            <input type="checkbox" id="menu"/>
-            <label for="menu">
-            </label>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="Acercade.html">Acerca de</a></li>
-                    <li><a href="servicios.html">Servicios</a></li>
-                    <li><a href="trabajos.html">Trabajos</a></li>
-                    <li><a href="Contacto.html">Contacto</a></li>
-                    <li><a href="login.html">Iniciar Sesión</a></li>
-
-                </ul>
-            </nav>
+     <!-- Header con imagen de fondo a pantalla completa -->
+  <header class="header">
+    <!-- Menú en la parte superior -->
+    <div class="menu container">
+      <a href="#" class="logo"></a>
+      <input type="checkbox" id="menu"/>
+      <label for="menu">
+        <img src="images/menu.png" class="menu-icono" alt="Menú">
+      </label>
+      <nav class="navbar">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="Acercade.html">Acerca de</a></li>
+          <li><a href="serviciosofi.html">Servicios</a></li>
+          <li><a href="trabajos.html">Trabajos</a></li>
+          <li><a href="Contacto.html">Contacto</a></li>
+          <li><a href="login.html">Iniciar Sesión</a></li>
+        </ul>
+      </nav>
+    </div>
+ 
+    <!-- Contenido del header: título y cards de servicios -->
+    <div class="header-content container">
+      <div class="container">
+        <h1>Trabajos Realizados</h1>
+    
+        <!-- Primera fila de Carruseles -->
+        <div class="fila-carruseles">
+          <!-- Carrusel 1 -->
+          <div class="carrusel">
+            <div class="imagen-contenedor">
+            <div class="lupa" id="lupa-1"></div> <!-- Lupa pequeña -->
+              <button class="boton btn-izquierda">&#8592;</button>
+              <img src="uploads/imagen1.jpg" alt="Trabajo 1">
+              <button class="boton btn-derecha">&#8594;</button>
+            </div>
+            <h2>Nombre del Trabajo 1</h2>
+            <p>Descripción del trabajo realizado 1.</p>
+          </div>
+    
+          <!-- Carrusel 2 -->
+          <div class="carrusel">
+            <div class="imagen-contenedor">
+              <button class="boton btn-izquierda">&#8592;</button>
+              <img src="uploads/imagen2.jpg" alt="Trabajo 2">
+              <button class="boton btn-derecha">&#8594;</button>
+            </div>
+            <h2>Nombre del Trabajo 2</h2>
+            <p>Descripción del trabajo realizado 2.</p>
+          </div>
+    
+          <!-- Carrusel 3 -->
+          <div class="carrusel">
+            <div class="imagen-contenedor">
+              <button class="boton btn-izquierda">&#8592;</button>
+              <img src="uploads/imagen3.jpg" alt="Trabajo 3">
+              <button class="boton btn-derecha">&#8594;</button>
+            </div>
+            <h2>Nombre del Trabajo 3</h2>
+            <p>Descripción del trabajo realizado 3.</p>
+          </div>
         </div>
-    </header> 
+    
+        <!-- Segunda fila de Carruseles -->
+        <div class="fila-carruseles">
+          <!-- Carrusel 4 -->
+          <div class="carrusel">
+            <div class="imagen-contenedor">
+              <button class="boton btn-izquierda">&#8592;</button>
+              <img src="uploads/imagen4.jpg" alt="Trabajo 4">
+              <button class="boton btn-derecha">&#8594;</button>
+            </div>
+            <h2>Nombre del Trabajo 4</h2>
+            <p>Descripción del trabajo realizado 4.</p>
+          </div>
+    
+          <!-- Carrusel 5 -->
+          <div class="carrusel">
+            <div class="imagen-contenedor">
+              <button class="boton btn-izquierda">&#8592;</button>
+              <img src="uploads/imagen5.jpg" alt="Trabajo 5">
+              <button class="boton btn-derecha">&#8594;</button>
+            </div>
+            <h2>Nombre del Trabajo 5</h2>
+            <p>Descripción del trabajo realizado 5.</p>
+          </div>
+    
+          <!-- Carrusel 6 -->
+          <div class="carrusel">
+            <div class="imagen-contenedor">
+              <button class="boton btn-izquierda">&#8592;</button>
+              <img src="uploads/imagen6.jpg" alt="Trabajo 6">
+              <button class="boton btn-derecha">&#8594;</button>
+            </div>
+            <h2>Nombre del Trabajo 6</h2>
+            <p>Descripción del trabajo realizado 6.</p>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
 
     
-        <footer>
-            <div class="footerContainer">
-                <div class="socialIcons">
-                    <a href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://twitter.com"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="https://linkedin.com"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://pinterest.com"><i class="fa-brands fa-pinterest"></i></a>
-                </div>
-          
-                
+  <footer>
+    <div class="footer-container">
+        <div class="footer-section about">
+            <h2>Sobre nosotros</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
             </div>
-            <div class="footerBottom">
-                <p>Copyright &copy;2024; Designed by <span class="designer">KEREN</span></p>
+        </div>
+        <div class="footer-section links">
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="acercade.html">Acerca de</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="trabajos.html">Trabajos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="login.html">Iniciar Sesión</a></li>
+            </ul>
+        </div>
+        <div class="footer-section contact">
+            <h2>Contactanos</h2>
+            <div class="contact-info">
+                <div><i class="fas fa-map-marker-alt"></i> 647 Linda Street, Phoenixville, PA 19460, USA</div>
+                <div><i class="fas fa-phone"></i> +1 234 567 8900</div>
+                <div><i class="fas fa-envelope"></i> knowmore@email.com</div>
             </div>
-        </footer>
- </body>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>Copyright © 2020 Online Tutorials. All Rights Reserved.</p>
+    </div>
+</footer>
+  <script src="/JS/eventotrab.js"></script>
+</body>
 </html>

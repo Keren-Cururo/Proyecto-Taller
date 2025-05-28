@@ -36,12 +36,22 @@ h1{
     font-size: 40px;
     line-height: 80px;
     color: #DAA520;
-    margin: 30px;
+    margin: 70px;
     margin-left: 40px;
     text-transform: uppercase;
     text-shadow: 2px 2px 4px black; 
 }
 
+
+p{
+    font-size: 0px;
+    line-height: 80px;
+    color: #DAA520;
+    margin: 70px;
+    margin-left: 40px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px black; 
+}
 
 .menu{
     position: absolute;
@@ -90,18 +100,42 @@ h1{
 }
 
 
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 40px 20px;
+}
+
+.right-section {
+    flex: 2;
+    text-align: right;
+}
+
+.right-section h1 {
+    text-align: right;
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #DAA520;
+    text-shadow: 2px 2px 4px black;
+}
 
 form {
     max-width: 600px;
     width: 100%;
-    margin: auto;
     padding: 20px;
     border: 1px solid #0a0909;
-    border-radius: 10px;
-    background-color: #181616;
-    margin-right: 90px;
+    background-color: #131212;
+    margin: 90px;
 }
 
+.extra-text {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #ffffff;
+    text-align: justify;
+}
 h2 {
     text-align: center;
     color: #DAA520;
@@ -142,12 +176,11 @@ textarea {
 }
 
 button {
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 10px 20px;
-    background-color: #28a745;
+    background-color: #DAA520;
     color: white;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
     display: block;
     width: 100px;
@@ -155,90 +188,115 @@ button {
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #a07916;
 }
 
-footer{ 
-    background-color: rgb(0, 0, 0);
- }
- .footerContainer{
-    width: 100%;
-    padding: 70px 30px 20px ;
- }
- .socialIcons{
-    display: flex;
-    justify-content: center;
- }
- .socialIcons a{
-    text-decoration: none;
-    padding:  10px;
-    background-color: white;
-    margin: 10px;
-    border-radius: 50%;
- }
- .socialIcons a i{
-    font-size: 2em;
-    color: black;
-    opacity: 0,9;
- }
-  Hover affect on social media icon 
-  .socialIcons a:hover{
-    background-color: #111;
-    transition: 0.5s;
- }
- .socialIcons a:hover i{
-    color: white;
-    transition: 0.5s;
- }
- .footerNav{
-    margin: 30px 0;
- }
- .footerNav ul{
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
- }
- .footerNav ul li a{
-    color:white;
-    margin: 20px;
-    text-decoration: none;
-    font-size: 1.3em;
-    opacity: 0.7;
-    transition: 0.5s;
- 
- }
- .footerNav ul li a:hover{
-    opacity: 1;
- }
- .footerBottom{
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
+
+footer {
     background-color: #000;
+    color: #fff;
+    padding: 50px 0 0; /* Eliminé espacio extra abajo */
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1100px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    width: 30%;
     padding: 10px;
+}
+
+.footer-section h2 {
+    color: #DAA520;
+    font-size: 20px;
+    border-bottom: 2px solid #DAA520;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
     text-align: center;
- }
- .footerBottom p{
-    color: white;
- }
- .designer{
-    opacity: 0.7;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 400;
-    margin: 0px 5px;
- }
- @media (max-width: 700px){
-    .footerNav ul{
-        flex-direction: column;
-    } 
-    .footerNav ul li{
-        width:100%;
-        text-align: center;
-        margin: 10px;
-    }
-    .socialIcons a{
-        padding: 8px;
-        margin: 4px;
-    }
- } 
+    line-height: 40px;
+    background-color: #000000;
+    color: #ffffff;
+    transition: 0.3s;
+    border-radius: 5px; /* Cuadrado en lugar de redondo */
+}
+
+.social-icons a:hover {
+    background-color: #DAA520;
+    color: #fff;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre los iconos */
+}
+
+.contact-info div {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espacio entre el icono y el texto */
+}
+
+.contact-info i {
+    font-size: 18px;
+    color: #DAA520;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 10px 0;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #DAA520;
+}
+
+/* Footer Bottom - Separado del resto */
+.footer-bottom {
+    text-align: center;
+    background-color: #000000;
+    padding: 15px;
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+
+
+
 
  
 @media(max-width: 991px) {

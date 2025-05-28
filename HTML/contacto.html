@@ -1,86 +1,147 @@
-<html lang="es"></html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/cont.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
-
     <title>Taller</title>
 </head>
 <body>
-    <header class="header" >
+    <header class="header">
         <div class="menu container">
             <a href="#" class="logo"></a>
-            <input type="checkbox" id="menu"/>
-            <label for="menu">
-            </label>
+            <input type="checkbox" id="menu" />
+            <label for="menu"></label>
+
+            
             <nav class="navbar">
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="Acercade.html">Acerca de</a></li>
-                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="serviciosofi.html">Servicios</a></li>
                     <li><a href="trabajos.html">Trabajos</a></li>
                     <li><a href="Contacto.html">Contacto</a></li>
                     <li><a href="login.html">Iniciar Sesión</a></li>
-
                 </ul>
             </nav>
         </div>
 
-        <h1 class="highlight">¿Cómo contactarnos?</h1>
-      
+
+
+        <div class="contact-container">
+            <!-- Sección derecha -->
+            <div class="right-section">
+                <h1>¿Cómo contactarnos?</h1>
+                <p class="extra-text">
+                    Nuestro horario de atención es de lunes a viernes, de 9:00 a 18:00. ¡No dudes en comunicarte con nosotros para resolver tus dudas!
+                    <br> 
+                    <br>
+                </p>
+        
+            </div>
+        
+            <!-- Formulario de Contacto -->
             <form id="contactForm">
-            <h2>Formulario de Contacto</h2>
-            <div class="form-group">
-                <div class="form-field">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" required>
+                <h2>Formulario de Contacto</h2>
+                <div class="form-group">
+                    <div class="form-field">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre_contacto" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="apellido">Apellido:</label>
+                        <input type="text" id="apellido" name="apellido" required>
+                    </div>
                 </div>
-                <div class="form-field">
-                    <label for="apellido">Apellido:</label>
-                    <input type="text" id="apellido" name="apellido" required>
+                <div class="form-group">
+                    <div class="form-field">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email2" name="email" required> <!-- Cambiado a id="email2" -->
+                    </div>
+                    <div class="form-field">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono" required>
+                    </div>
+                </div>
+                <label for="comentarios">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" required></textarea>
+                <button type="submit">ENVIAR</button>
+            </form>
+        </div>
+    </header>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h2>Sobre nosotros</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
-            
-            <div class="form-group">
-                <div class="form-field">
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-field">
-                    <label for="telefono">Teléfono:</label>
-                    <input type="tel" id="telefono" name="telefono" required>
-                </div>
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="acercade.html">Acerca de</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="trabajos.html">Trabajos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="login.html">Iniciar Sesión</a></li>
+                </ul>
             </div>
-            
-          
-            <label for="comentarios">Comentarios:</label>
-            <textarea id="comentarios" name="comentarios" required></textarea>
-            
-            <button type="submit">ENVIAR</button>
-        </form>
-        <script src="/JS/contac.js"></script>
+            <div class="footer-section contact">
+                <h2>Contactanos</h2>
+                <div class="contact-info">
+                    <div><i class="fas fa-map-marker-alt"></i> 647 Linda Street, Phoenixville, PA 19460, USA</div>
+                    <div><i class="fas fa-phone"></i> +1 234 567 8900</div>
+                    <div><i class="fas fa-envelope"></i> knowmore@email.com</div>
+                </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright © 2020 Online Tutorials. All Rights Reserved.</p>
+        </div>
+    </footer>
 
-    </header> 
 
-    
-        <footer>
-            <div class="footerContainer">
-                <div class="socialIcons">
-                    <a href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://twitter.com"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="https://linkedin.com"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://pinterest.com"><i class="fa-brands fa-pinterest"></i></a>
-                </div>
-          
-                
-            </div>
-            <div class="footerBottom">
-                <p>Copyright &copy;2024; Designed by <span class="designer">KEREN</span></p>
-            </div>
-        </footer>
- </body>
+</body>
 </html>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+   document.addEventListener("DOMContentLoaded", function () {
+    // Inicializar EmailJS con tu clave pública
+    emailjs.init("dpE98Hr6xflqhjrzn"); // Cambia esta clave pública si tienes una diferente
+
+    // Añadir evento al formulario
+    document.getElementById("contactForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevenir la acción predeterminada del formulario
+
+        // Capturar los datos del formulario
+        let templateParams = {
+            nombre: document.getElementById("nombre").value,     // Nombre del usuario
+            apellido: document.getElementById("apellido").value, // Apellido del usuario
+            email: document.getElementById("email2").value,      // Email del usuario
+            telefono: document.getElementById("telefono").value, // Teléfono del usuario
+            mensaje: document.getElementById("mensaje").value    // Mensaje del usuario
+        };
+
+        // Enviar los datos mediante EmailJS
+        emailjs.send("service_0bjbgiv", "template_hel32sm", templateParams)
+            .then(function (response) {
+                console.log("Email enviado:", response);
+                Swal.fire("¡Éxito!", "Tu mensaje ha sido enviado.", "success"); // Alerta de éxito
+                document.getElementById("contactForm").reset(); // Limpiar el formulario
+            })
+            .catch(function (error) {
+                console.error("Error al enviar el email:", error);
+                Swal.fire("Error", "Hubo un problema al enviar el mensaje.", "error"); // Alerta de error
+            });
+    });
+});
+</script>

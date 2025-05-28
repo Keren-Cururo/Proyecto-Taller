@@ -1,0 +1,220 @@
+/* Importación de fuentes y Font Awesome */
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Merriweather:ital,wght@300;400;700;900&family=Poppins:wght@400;600;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
+
+/* Reset Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+/* Body */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+  height: 100vh;
+}
+
+/* Contenedor General */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Navbar (mismo estilo que usuarios) */
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000;
+  padding: 10px;
+  z-index: 1000;
+}
+.menu .navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.menu .navbar ul li {
+  position: relative;
+  float: left;
+}
+.menu .navbar ul li a {
+  font-size: 18px;
+  padding: 30px;
+  color: #DAA520;
+  display: block;
+  font-weight: 600;
+}
+.menu .navbar ul li a:hover {
+  color: #8a8326;
+}
+.menu .navbar ul li .submenu {
+  display: none;
+  position: absolute;
+  background-color: #000;
+  min-width: 160px;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  margin-top: -19px;
+}
+.menu .navbar ul li:hover .submenu {
+  display: block;
+}
+#menu {
+  display: none;
+}
+
+/* Contenido Principal */
+.main {
+  margin-top: 90px;
+  padding: 20px;
+}
+
+/* Layout: dos columnas (Formulario a la izquierda y listado a la derecha) */
+.main__content {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  margin-top: 110px; /* Compensa el espacio del navbar */
+}
+
+
+/* Sección del Formulario (Izquierda) */
+.section-form {
+  flex: 0.6;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 1px;
+}
+.section-form h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.form-group label {
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
+.form-group input,
+.form-group textarea,
+.form__button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+.form__button {
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 15px;
+}
+.form__button:hover {
+  background-color: #333;
+}
+
+
+
+/* Contenedor de Búsqueda */
+.container-search {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  text-align: center;
+}
+.input-busqueda {
+  width: 80%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+button {
+  padding: 10px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  margin: 5px;
+}
+button:hover {
+  background-color: #555;
+}
+
+
+/* Tabla de Testimonios */
+.table-testimonios {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-testimonios th,
+.table-testimonios td {
+  border: 1px solid #d3d2d2;
+  padding: 6px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.table-testimonios th {
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+}
+
+
+/* Footer */
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1100px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+.footer-section {
+  width: 30%;
+  padding: 10px;
+}
+.footer-section h2 {
+  color: #DAA520;
+  font-size: 20px;
+  border-bottom: 2px solid #DAA520;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+.footer-bottom {
+  text-align: center;
+  background-color: #000;
+  padding: 15px;
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+
+
+
+
+

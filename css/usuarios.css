@@ -1,0 +1,558 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    height: 100vh;
+
+
+}
+
+div.menu{background-color: #000000;}
+.container  {
+    max-width: 1200px;
+    
+    margin: 0 auto;
+}
+  
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #000; /* Fondo negro */
+    z-index: 1000; /* Asegúrate de que el navbar esté encima */
+    padding: 10px; /* Espaciado interno */
+    margin-bottom: 20px; /* Espacio entre el navbar y el contenido */
+}
+
+.main {
+    margin-top: 80px; /* Desplaza el contenido principal para evitar que quede debajo del navbar */
+    padding: 20px; /* Espaciado alrededor del contenido */
+}
+
+.menu .navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 30px;
+    color: #DAA520;
+    display: block;
+    font-weight: 600;
+}
+
+.menu .navbar ul li a:hover {
+    color: #8a8326;
+}
+
+/* Estilos del submenú */
+.menu .navbar ul li .submenu {
+    display: none;
+    position: absolute;
+    background-color: #000000;
+    min-width: 160px; /* Ancho mínimo más pequeño */
+    top: 100%; /* Ajustar para estar más cerca del elemento principal */
+    left: 0;
+    z-index: 1;
+    padding: 0;
+    margin-top: -19px; /* Ajustar para pegarlo más al menú principal */
+}
+
+.menu .navbar ul li .submenu li {
+    float: none;
+}
+
+.menu .navbar ul li .submenu li a {
+    font-size: 12px; /* Tamaño de fuente reducido solo para el submenu */
+    color: #f7e6e6;
+    padding: 8px 12px; /* Ajustar el padding para que sea más pequeño */
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.menu .navbar ul li .submenu li a:hover {
+    background-color: #000000;
+    color:#DAA520;
+}
+
+/* Mostrar el submenú al pasar el mouse */
+.menu .navbar ul li:hover .submenu {
+    display: block;
+}
+
+#menu {
+    display: none;
+}
+
+.menu-icono {
+    width: 25px;
+}
+
+.menu label {
+    cursor: pointer;
+    display: none;
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+#btnCancelar {
+   padding: 6px 10px !important;
+  font-size: 12px;
+  width: auto;
+  max-width: 130px !important;
+  margin-top: 10px;
+  background-color: #000000; /* Opcional: color más claro para diferenciarlo */
+  color: #ffffff;             /* Texto oscuro */
+}
+
+#btnCancelar:hover {
+  background-color: #554110;
+}
+
+h1, h3 {
+    text-align: center;
+}
+
+
+/* Contenido Principal */
+.main {
+  margin-top: 160px;
+  padding: 20px;
+}
+.main__content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.section {
+    flex-basis: 23%; /* Reducir el ancho del formulario */
+    margin: 10px 0;
+}
+
+.form_task {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 70%;
+    margin:20px; /* Centrar el formulario */
+}
+
+.form__input, .form__input2 {
+    padding: 10px; /* Ajustar el padding para hacer los campos más pequeños */
+    font-size: 12px; /* Ajustar el tamaño de la fuente */
+    width: 100%;
+
+    box-sizing: border-box;
+    border: 1px solid #ccc; /* Borde ligero para mayor claridad */
+    border-radius: 5px; /* Bordes redondeados para un diseño más amigable */
+    margin-bottom: 15px; /* Añade un espaciado inferior entre los campos */
+
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.form__button {
+    flex: 1;
+    padding: 8px;
+    font-size: 12px; /* Ajustar el tamaño de la fuente */
+    margin: 5px;
+}
+
+.right-column {
+    flex-basis: 0%; /* Aumentar el ancho del listado */
+}
+
+.table-usuarios {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-usuarios th, .table-usuarios td {
+    border: 1px solid #000000;
+    padding: 6px; /* Ajustar el padding para hacer las celdas más pequeñas */
+    font-size: 12px; /* Ajustar el tamaño de la fuente */
+    text-align: center;
+}
+
+.table-usuarios th {
+    background-color: #000000;
+    font-weight: bold;
+}
+
+.toggle-button {
+    width: 40px;
+    height: 30px;
+    position: absolute; /* Posicionamos el toggle */
+    top: 20px; /* Distancia desde la parte superior */
+    left: 20px; /* Distancia desde la parte izquierda */
+    z-index: 10; /* Aseguramos que esté encima de otros elementos */
+    background-color: #000; /* Opcional: Fondo del toggle */
+    color: #fff; /* Opcional: Color del texto/icono */
+    padding: 10px; /* Espaciado interno */
+    border: none; /* Elimina bordes */
+    cursor: pointer; /* Muestra el cursor como puntero */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 12px; /* Tamaño de la fuente */
+
+
+}
+
+.container-search {
+    margin-bottom: 20px;
+    width: 100%; /* Ajustar el ancho del contenedor de búsqueda */
+    margin: 0 auto; /* Centrar el contenedor de búsqueda */
+}
+
+
+
+.table-usuarios td input[type="password"] {
+    width: 100px; /* Ajusta el ancho del campo */
+    text-align: center; /* Centra el texto para mejor presentación */
+    border: none; /* Elimina el borde para mantenerlo limpio */
+    background: transparent; /* Fondo transparente */
+    outline: none; /* Sin contorno al hacer clic */
+    font-size: 14px; /* Ajusta el tamaño de la fuente */
+}
+
+.table-usuarios td {
+    padding: 10px; /* Espaciado interno */
+    text-align: center;
+    vertical-align: middle; /* Centrar verticalmente el contenido */
+}
+
+.table-usuarios td:nth-child(11) { /* Columna de contraseña */
+    max-width: 150px;
+    text-align: left;
+}
+
+.table-usuarios td:nth-child(12) { /* Columna de botones */
+    white-space: nowrap; /* Evitar que los botones se amontonen */
+    text-align: center;
+}
+
+
+
+/* Diseño general de las dos columnas */
+.layout {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+/* Estilo del formulario */
+.form-container {
+    flex: 1; /* Ocupa el 40% del espacio */
+    max-width: 40%; /* Ancho máximo */
+    background-color: #fff; /* Fondo blanco */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px; /* Espaciado interno */
+}
+
+/* Estilo de la tabla y búsqueda */
+.table-container {
+    flex: 2; /* Ocupa el 60% del espacio */
+    max-width: 70%; /* Ancho máximo */
+    background-color: #ffffff; /* Fondo blanco */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px; /* Espaciado interno */
+    overflow-x: auto; /* Barra horizontal */
+    overflow-y: auto; /* Barra vertical */
+}
+
+/* Ajustes de la tabla */
+.table-usuarios {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-usuarios th, .table-usuarios td {
+    border: 1px solid #d3d2d2;
+    padding: 6px;
+    font-size: 12px;
+    text-align: center;
+}
+.form__label {
+    font-size: 16px; /* Tamaño de la fuente */
+    font-weight: bold; /* Negrita */
+    margin-bottom: 15px; /* Espacio entre la etiqueta y el campo */
+
+}
+.form-group label {
+    display: inline-block; /* Asegura que el label esté en su propia línea */
+    margin-bottom: 10px; /* Ajusta la distancia inferior entre el label y el input */
+  
+}
+
+
+th{
+    background-color: #ffffff;
+    color: #ffffff;
+    padding: 10px; /* Espaciado interno */
+    font-size: 14px; /* Tamaño de la fuente */
+    text-align: center;
+
+}
+.table-usuarios th {
+    background-color: #000000;
+    font-weight: bold;
+    padding: 12px 15px;
+}
+
+/* Estilo para el contenedor de búsqueda */
+.container-search {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group input{
+     width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #d3d2d2;
+  border-radius: 5px;
+}
+
+.container-search {
+    background-color: #fff; /* Fondo blanco para destacar */
+    border: 1px solid #ddd; /* Borde claro alrededor */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin-bottom: 20px; /* Espacio inferior */
+    text-align: center; /* Centrar contenido */
+}
+
+.input-busqueda {
+    width: 80%; /* Ajusta el ancho del campo de entrada */
+    padding: 10px; /* Espaciado interno */
+    font-size: 14px; /* Tamaño de la fuente */
+    border: 1px solid #ccc; /* Borde claro */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-bottom: 10px; /* Espacio entre elementos */
+}
+
+#btnGuardar {
+  padding: 6px 12px; /* más chico */
+  font-size: 14px;
+  width: auto; /* elimina cualquier ancho forzado */
+  max-width: 200px;
+  margin-top: 10px;
+}
+#btnCancelar {
+  padding: 6px 20px; /* más chico */
+  font-size: 14px;
+  width: auto; /* elimina cualquier ancho forzado */
+  max-width: 200px;
+  margin-top: 10px;
+}
+
+button {
+    padding: 10px 15px; /* Espaciado interno */
+    font-size: 14px; /* Tamaño de la fuente */
+    border: none; /* Sin bordes */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    cursor: pointer; /* Cursor como puntero */
+    margin: 5px; /* Espaciado entre botones */
+   
+}
+
+button:hover {
+   background-color: #554110;
+}
+
+/* Botones generales */
+button {
+    margin: 5px;
+    padding: 8px 12px;
+    font-size: 12px;
+}
+
+/* Previsualización de Imagen */
+#imagenPreview {
+  max-width: 250px;
+  max-height: 250px;
+  display: block;
+  margin: 10px auto;
+}
+
+
+.button-container {
+  display: flex;             /* Para que los botones estén en la misma fila */
+  justify-content: center;   /* Para centrarlos horizontalmente */
+  gap: 10px;                 /* Espacio entre los botones: podés aumentar o reducir */
+  margin-top: 15px;          /* Espacio superior opcional */
+}
+
+      .form__img {
+        max-width: 120px;
+        max-height: 120px;
+        margin-top: 10px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+      }
+      .preview-container {
+        margin-top: 10px;
+      }
+/* Botones generales */
+button {
+    margin: 5px;
+    padding: 8px 12px;
+    font-size: 12px;
+}
+/* Botones de acción en tabla (solo emoji, sin fondo ni borde) */
+.btn-edit,
+.btn-delete {
+  background: none;
+  border: none;
+  font-size: 14px; /* tamaño del emoji */
+  padding: 0;
+  margin: 2px 6px;
+  cursor: pointer;
+}
+
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
+
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 50px 0 0; /* Eliminé espacio extra abajo */
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1100px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    width: 30%;
+    padding: 10px;
+}
+
+.footer-section h2 {
+    color: #DAA520;
+    font-size: 20px;
+    border-bottom: 2px solid #DAA520;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    text-align: center;
+    line-height: 40px;
+    background-color: #000000;
+    color: #ffffff;
+    transition: 0.3s;
+    border-radius: 5px; /* Cuadrado en lugar de redondo */
+}
+
+.social-icons a:hover {
+    background-color: #DAA520;
+    color: #fff;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre los iconos */
+}
+
+.contact-info div {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espacio entre el icono y el texto */
+}
+
+.contact-info i {
+    font-size: 18px;
+    color: #DAA520;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 10px 0;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #DAA520;
+}
+
+/* Footer Bottom - Separado del resto */
+.footer-bottom {
+    text-align: center;
+    background-color: #000000;
+    padding: 15px;
+    font-size: 14px;
+    margin-top: 30px;
+}
+

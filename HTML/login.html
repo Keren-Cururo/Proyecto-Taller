@@ -1,67 +1,157 @@
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Página de Inicio de Sesión</title>
     <link rel="stylesheet" href="/css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-
 <body>
-    <header class="header" >
-    
-    
-        <div class="login-container">
-            <h2>Iniciar sesión</h2>
-            <form id="loginForm" action="#" method="POST">
-                <i class="fas fa-user"></i>
 
-                <label for="username">Usuario:</label>
-                <input type="text" id="username" name="username" required><br>
-                <i class="fas fa-lock"></i>
+ 
+<header class="header">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://www.gstatic.com;">
 
-                <label for="password">Contraseña:</label>
-                <input type="password" id="password" name="password" required><br>
-                <a href="#" class="forgot-password">Olvidaste tu contraseña?</a><br> <!-- Enlace para "Olvidaste tu contraseña?" -->
-                <input type="submit" value="Iniciar sesión">
-            </form>
+        <div class="menu containerr">
+            <a href="#" class="logo"></a>
+            <input type="checkbox" id="menu"/>
+            <label for="menu"></label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="Acercade.html">Acerca de</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="trabajos.html">Trabajos</a></li>
+                    <li><a href="Contacto.html">Contacto</a></li>
+                    <li><a href="login.html">Iniciar Sesión</a></li>
+                </ul>
+            </nav>
         </div>
-    
-        <script>
-            document.getElementById("loginForm").addEventListener("submit", function(event) {
-                event.preventDefault();
-                
-                var username = document.getElementById("username").value;
-                var password = document.getElementById("password").value;
-    
-                // Validar las credenciales
-                if (username === "admin" && password === "admin") {
-                    alert("Inicio de sesión exitoso. Bienvenido!");
-                    window.location.href = "home.html";
-                } else {
-                    alert("Usuario o contraseña incorrectos. Por favor, inténtalo de nuevo.");
-                }
-            });
-        </script>
     </header>
-    <footer>
-        <div class="footerContainer">
-            <div class="socialIcons">
-                <a href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://twitter.com"><i class="fa-brands fa-twitter"></i></a>
-                <a href="https://linkedin.com"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://pinterest.com"><i class="fa-brands fa-pinterest"></i></a>
+    <div class="container">
+        <form id="loginForm" class="login-form" action="http://localhost:3000/usuarios/login" method="POST" enctype="multipart/form-data">     
+            <h2>INICIO DE SESIÓN</h2>
+            <div class="input-group">
+                <label for="username">Correo Electrónico</label>
+                <div class="input-wrapper">
+                    <span class="icon"><i class="fas fa-user"></i></span>
+                    <input type="text" id="username" name="correoElectronico" required>
+                </div>
             </div>
-      
-            
+            <div class="input-group">
+                <label for="password">Contraseña</label>
+                <div class="input-wrapper">
+                    <span class="icon"><i class="fas fa-lock"></i></span>
+                    <input type="password" id="password" name="password" required>
+                    <span id="togglePassword" class="icon"><i class="fas fa-eye"></i></span>
+                </div>
+            </div>
+            <button type="submit" class="login-btn">Iniciar Sesión</button>
+            <div id="error-message" style="color: red; display: none;">Login fallido. Por favor, verifique sus credenciales.</div>
+            <div class="signup-link">
+                <p>¿No tienes una cuenta? <a href="registro.html">Regístrate</a></p>
+            </div>
+        </form>
+        <div class="welcome-section">
+            <!-- Sección de bienvenida -->
         </div>
-        <div class="footerBottom">
-            <p>Copyright &copy;2024; Designed by <span class="designer">Tripplanner</span></p>
+    </div>
+    
+    <script>
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const passwordField = document.getElementById('password');
+            const toggleIcon = document.getElementById('togglePassword').querySelector('i');
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                toggleIcon.classList.remove('fa-eye');
+                toggleIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordField.type = 'password';
+                toggleIcon.classList.remove('fa-eye-slash');
+                toggleIcon.classList.add('fa-eye');
+            }
+        });
+    
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+    
+            fetch('http://localhost:3000/usuarios/login', {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    return response.json().then(errorData => {
+                        throw new Error(errorData.message);
+                    });
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.auth) {
+                    localStorage.setItem('token', data.token);
+                    window.location.href = 'home.html';
+                } else {
+                    const errorMessageElement = document.getElementById('error-message');
+                    errorMessageElement.textContent = 'Login fallido. Por favor, verifique sus credenciales.';
+                    errorMessageElement.style.display = 'block';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error.message);
+                const errorMessageElement = document.getElementById('error-message');
+                errorMessageElement.textContent = error.message || "Ocurrió un error al iniciar sesión.";
+                errorMessageElement.style.display = 'block';
+            });
+        });
+    </script>
+    
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h2>Sobre nosotros</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="acercade.html">Acerca de</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="trabajos.html">Trabajos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="login.html">Iniciar Sesión</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h2>Contactanos</h2>
+                <div class="contact-info">
+                    <div><i class="fas fa-map-marker-alt"></i> 647 Linda Street, Phoenixville, PA 19460, USA</div>
+                    <div><i class="fas fa-phone"></i> +1 234 567 8900</div>
+                    <div><i class="fas fa-envelope"></i> knowmore@email.com</div>
+                </div>
+                
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright © 2020 Online Tutorials. All Rights Reserved.</p>
         </div>
     </footer>
-</body>
+
+
 </body>
 </html>
-
