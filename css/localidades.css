@@ -215,7 +215,9 @@ h1 {
 
 .table-usuarios th,
 .table-usuarios td {
-  padding: 12px 15px;
+  font-size: 12px;
+  padding: 6px 8px;
+
 }
 .table-usuarios th:first-child,
 .table-usuarios td:first-child {
@@ -444,8 +446,8 @@ footer {
 
 .table-generos th,
 .table-generos td {
-  padding: 12px 15px !important;
-  
+    font-size: 12px;
+    padding: 6px 8px;
 }
 .table-usuarios th {
   font-size: 12px;  /* Tamaño de letra más chico */
