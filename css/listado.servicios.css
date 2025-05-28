@@ -206,7 +206,19 @@ button:hover {
    background-color: #554110;
 }
 
+  .small-button {
+  padding: 7px 10px !important;
+  font-size: 13px !important;
+  border-radius: 4px !important;
+  background-color: #0c0c0b !important;
+  color: white !important;
+  border: none !important;
+  cursor: pointer !important;
+}
 
+.small-button:hover {
+  background-color: #bd8f1a !important; 
+}
 
 .button-container {
   display: flex;

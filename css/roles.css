@@ -204,6 +204,22 @@ h3 {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
+
+.small-button {
+  padding: 7px 10px !important;
+  font-size: 13px !important;
+  border-radius: 4px !important;
+  background-color: #0c0c0b !important;
+  color: white !important;
+  border: none !important;
+  cursor: pointer !important;
+}
+
+.small-button:hover {
+  background-color: #bd8f1a !important; 
+}
+
+
 .table-roles thead tr {
   background-color: #000000;
   color: #ffffff;
@@ -279,6 +295,17 @@ button#btn-mostrarElemento:hover {
 
 button#btn-mostrarElemento {
   margin: 20px;
+}
+button#btnGuardar.form__button {
+  background-color: #0c0c0b;
+  color: white;
+  padding: 7px 10px !important;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button#btnGuardar.form__button:hover {
+  background-color: #bd8f1a;
 }
 
 .toggle-button {

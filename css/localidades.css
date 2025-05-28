@@ -157,6 +157,22 @@ h1 {
   margin-top: 15px;
 }
 
+.small-button {
+    padding: 4px 10px;
+    font-size: 13px;
+    border-radius: 4px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  .small-button:hover {
+    background-color: #0056b3;
+  }
+
+
+
 .form__input,
 .form__input2 {
   width: 80%;
@@ -170,7 +186,7 @@ h1 {
 .form__button {
   background-color: #0c0c0b;
   color: white;
-  padding: 10px 15px;
+   padding: 7px 10px !important;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -266,11 +282,11 @@ button#buscarElemento,
 button#btn-mostrarElemento {
   background-color: #0c0c0b;
   color: white;
-  padding: 10px 15px;
+  padding: 14px 15px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin: 10px;
+  margin: 12px;
 }
 
 button#buscarElemento:hover,
@@ -280,6 +296,19 @@ button#btn-mostrarElemento:hover {
 
 
 
+.small-button {
+  padding: 7px 10px !important;
+  font-size: 13px !important;
+  border-radius: 4px !important;
+  background-color: #0c0c0b !important;
+  color: white !important;
+  border: none !important;
+  cursor: pointer !important;
+}
+
+.small-button:hover {
+  background-color: #bd8f1a !important; 
+}
 
 
 
