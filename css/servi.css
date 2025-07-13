@@ -126,7 +126,9 @@ h1.title {
     cursor: pointer;
     display: none;
 }
-
+.menu .navbar ul li a:hover {
+  text-decoration: none; /* ← esto quita la línea subrayada */
+}
 .header-content {
     text-align: center;
     /* Para que el contenido se distancie del menú y se vea con claridad, podrías agregar padding extra */

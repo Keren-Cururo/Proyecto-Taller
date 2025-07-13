@@ -27,49 +27,104 @@
             </nav>
         </div>
 
+<main class="contact-main">
+  <h2 class="contact-title">Contáctanos</h2>
+  <p class="contact-subtitle">¿Tienes alguna pregunta o comentario? Nos encantaría escucharte.</p>
 
-
-        <div class="contact-container">
-            <!-- Sección derecha -->
-            <div class="right-section">
-                <h1>¿Cómo contactarnos?</h1>
-                <p class="extra-text">
-                    Nuestro horario de atención es de lunes a viernes, de 9:00 a 18:00. ¡No dudes en comunicarte con nosotros para resolver tus dudas!
-                    <br> 
-                    <br>
-                </p>
-        
-            </div>
-        
-            <!-- Formulario de Contacto -->
-            <form id="contactForm">
-                <h2>Formulario de Contacto</h2>
-                <div class="form-group">
-                    <div class="form-field">
-                        <label for="nombre">Nombre:</label>
-                        <input type="text" id="nombre" name="nombre_contacto" required>
-                    </div>
-                    <div class="form-field">
-                        <label for="apellido">Apellido:</label>
-                        <input type="text" id="apellido" name="apellido" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="form-field">
-                        <label for="email">E-mail:</label>
-                        <input type="email" id="email2" name="email" required> <!-- Cambiado a id="email2" -->
-                    </div>
-                    <div class="form-field">
-                        <label for="telefono">Teléfono:</label>
-                        <input type="tel" id="telefono" name="telefono" required>
-                    </div>
-                </div>
-                <label for="comentarios">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" required></textarea>
-                <button type="submit">ENVIAR</button>
-            </form>
+  <div class="contact-grid">
+    <!-- COLUMNA IZQUIERDA -->
+    <div class="contact-info-cards">
+      <div class="info-card">
+        <i class="fas fa-map-marker-alt"></i>
+        <div>
+          <h4>Dirección</h4>
+          <p>Av. Gourmet 123, Buenos Aires<br>Argentina</p>
         </div>
+      </div>
+
+      <div class="info-card">
+        <i class="fas fa-phone"></i>
+        <div>
+          <h4>Teléfono</h4>
+          <p>+54 11 1234-5678</p>
+          <a href="tel:+541112345678">Llamar ahora</a>
+        </div>
+      </div>
+
+      <div class="info-card whatsapp">
+        <i class="fab fa-whatsapp"></i>
+        <div>
+          <h4>WhatsApp</h4>
+          <p>+54 11 1234-5678</p>
+        
+        </div>
+      </div>
+
+      <div class="info-card">
+        <i class="fas fa-clock"></i>
+        <div>
+          <h4>Horarios de Atención</h4>
+          <p>
+            <strong>Lunes a Viernes:</strong><br>7:00 - 15:00 y 16:00 - 21:30<br>
+            <strong>Sábados:</strong><br>12:00 - 16:00 y 19:00 - 00:00<br>
+            <strong>Domingos:</strong><br>12:00 - 16:00 y 19:00 - 23:00
+          </p>
+        </div>
+      </div>
+    </div>
+
+  <form id="contactForm" class="contact-form">
+  <h3><i class="fas fa-paper-plane"></i> Envíanos un Mensaje</h3>
+  <p class="contact-subtitle">¿Tienes alguna pregunta o comentario? Nos encantaría escucharte.</p>
+
+  <!-- Fila 1: Nombre y Correo -->
+  <div class="form-row">
+    <div class="form-group">
+      <label for="nombre"><i class="fas fa-user"></i> Nombre completo *</label>
+      <input type="text" id="nombre" name="nombre_contacto" required>
+    </div>
+    <div class="form-group">
+      <label for="email2"><i class="fas fa-envelope"></i> Correo electrónico *</label>
+      <input type="email" id="email2" name="email" required>
+    </div>
+  </div>
+
+  <!-- Fila 2: Teléfono y Asunto -->
+  <div class="form-row">
+    <div class="form-group">
+      <label for="telefono"><i class="fas fa-phone"></i> Teléfono (opcional)</label>
+      <input type="tel" id="telefono" name="telefono">
+    </div>
+    <div class="form-group">
+      <label for="asunto"><i class="fas fa-list"></i> Asunto *</label>
+      <select id="asunto" name="asunto" required>
+        <option value="" disabled selected>Selecciona un asunto</option>
+        <option value="consulta">Consulta</option>
+        <option value="presupuesto">Presupuesto</option>
+        <option value="otro">Otro</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Fila 3: Mensaje -->
+  <div class="form-group-full">
+    <label for="mensaje"><i class="fas fa-comment-dots"></i> Mensaje *</label>
+    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+  </div>
+
+  <!-- Checkbox (opcional, si querés agregarlo) -->
+  <div class="form-checkbox">
+  
+  </div>
+
+  <button type="submit"><i class="fas fa-paper-plane"></i> Enviar Mensaje</button>
+</form>
+
+  </div>
+</main>
     </header>
+
+
     <footer>
         <div class="footer-container">
             <div class="footer-section about">
@@ -108,40 +163,45 @@
 
 
 </body>
-</html>
-
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</html><script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
    document.addEventListener("DOMContentLoaded", function () {
     // Inicializar EmailJS con tu clave pública
-    emailjs.init("dpE98Hr6xflqhjrzn"); // Cambia esta clave pública si tienes una diferente
+    emailjs.init("dpE98Hr6xflqhjrzn");
 
-    // Añadir evento al formulario
     document.getElementById("contactForm").addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevenir la acción predeterminada del formulario
+    event.preventDefault();
 
-        // Capturar los datos del formulario
-        let templateParams = {
-            nombre: document.getElementById("nombre").value,     // Nombre del usuario
-            apellido: document.getElementById("apellido").value, // Apellido del usuario
-            email: document.getElementById("email2").value,      // Email del usuario
-            telefono: document.getElementById("telefono").value, // Teléfono del usuario
-            mensaje: document.getElementById("mensaje").value    // Mensaje del usuario
-        };
+    const asunto = document.getElementById("asunto").value;
 
-        // Enviar los datos mediante EmailJS
-        emailjs.send("service_0bjbgiv", "template_hel32sm", templateParams)
-            .then(function (response) {
-                console.log("Email enviado:", response);
-                Swal.fire("¡Éxito!", "Tu mensaje ha sido enviado.", "success"); // Alerta de éxito
-                document.getElementById("contactForm").reset(); // Limpiar el formulario
-            })
-            .catch(function (error) {
-                console.error("Error al enviar el email:", error);
-                Swal.fire("Error", "Hubo un problema al enviar el mensaje.", "error"); // Alerta de error
-            });
+    // Validación personalizada del campo "asunto"
+    if (!asunto) {
+        Swal.fire("Atención", "Por favor, selecciona un asunto antes de enviar el mensaje.", "warning");
+        return;
+    }
+
+    let templateParams = {
+        nombre: document.getElementById("nombre").value,
+        email: document.getElementById("email2").value,
+        telefono: document.getElementById("telefono").value,
+        asunto: asunto,
+        mensaje: document.getElementById("mensaje").value
+    };
+
+    emailjs.send("service_0bjbgiv", "template_hel32sm", templateParams)
+        .then(function (response) {
+            console.log("Email enviado:", response);
+            Swal.fire("¡Éxito!", "Tu mensaje ha sido enviado.", "success");
+            document.getElementById("contactForm").reset();
+        })
+        .catch(function (error) {
+            console.error("Error al enviar el email:", error);
+            Swal.fire("Error", "Hubo un problema al enviar el mensaje.", "error");
+        });
     });
+
 });
-</script>
+
+</script> 

@@ -194,7 +194,8 @@ p{
 }
 
 .coffee-1 img   {
-    width: 300px;
+    width: 90px;
+    margin: 40px;
 }
 
 
@@ -234,11 +235,16 @@ p{
 
 }
 
+.services-content h3 {
+
+    text-shadow: 2px 2px 4px black; }
+
 .services-content p{
     font-size: 16px;
     color: #c5c5c5;
-    margin-bottom: 50px;
-    padding: 0 100px;
+    margin-bottom: 20px;
+ 
+    
    
 }
 
@@ -258,8 +264,8 @@ p{
 }
 
 .services-1 h3{
-    color: #faf2f2;
-    font-size: 18px;
+    color: #DAA520;
+    font-size: 30px;
 }
 
 h2{
@@ -307,7 +313,7 @@ h2 {
 
 
 .sucursal {
-    width: 50%; /* Ajusta el tamaño a mediano */
+    width: 120%; /* Ajusta el tamaño a mediano */
     margin-left: 0; /* Alinea a la izquierda */
     border: 1px solid #000000; /* Opcional: añade un borde para mejor visualización */
     padding: 10px; /* Opcional: añade un poco de padding */
@@ -329,226 +335,106 @@ iframe {
 }
 
 
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
 
-footer {
-    background-color: #000;
-    color: #fff;
-    padding: 50px 0 0; /* Eliminé espacio extra abajo */
-    font-family: 'Poppins', sans-serif;
-}
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
 
-.footer-container {
-    display: flex;
-    justify-content: space-around;
-    max-width: 1100px;
-    margin: auto;
-    flex-wrap: wrap;
-}
-
-.footer-section {
-    width: 30%;
-    padding: 10px;
-}
-
-.footer-section h2 {
-    color: #DAA520;
-    font-size: 20px;
-    border-bottom: 2px solid #DAA520;
-    padding-bottom: 5px;
-    margin-bottom: 20px;
-}
-
-.footer-section p {
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-.social-icons {
-    margin-top: 10px;
-}
-
-.social-icons a {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    margin: 5px;
-    text-align: center;
-    line-height: 40px;
-    background-color: #fff;
-    color: #000;
-    transition: 0.3s;
-    border-radius: 5px; /* Cuadrado en lugar de redondo */
-}
-
-.social-icons a:hover {
-    background-color: #DAA520;
-    color: #fff;
-}
-
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: 10px; /* Espacio entre los iconos */
-}
-
-.contact-info div {
-    display: flex;
-    align-items: center;
-    gap: 8px; /* Espacio entre el icono y el texto */
-}
-
-.contact-info i {
-    font-size: 18px;
-    color: #DAA520;
-}
-
-.footer-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-section ul li {
-    margin: 10px 0;
-}
-
-.footer-section ul li a {
-    color: #fff;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.footer-section ul li a:hover {
-    color: #DAA520;
-}
-
-/* Footer Bottom - Separado del resto */
-.footer-bottom {
-    text-align: center;
-    background-color: #000000;
-    padding: 15px;
-    font-size: 14px;
-    margin-top: 30px;
-}
-
-
- 
-
-
-
-
-@media(max-width: 991px) {
-    .menu {
-        padding: 30px;
-    }
-
-    .menu label {
-        display: initial;
-    }
-
-    .menu .navbar {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background-color: #323337;
-        display: none;
-    }
-
-    .menu .navbar ul li {
-        width: 100%;
-    }
-
-    #menu:checked ~ .navbar{
-        display: initial;
-    }
-
-    .header {
-        min-height: 0vhs;
-    }
-
-    .header-content {
-        padding: 100px 30px;
-    }
-
-    .header-content p {
-        padding: 0;
-    }
-
-    .coffee {
-        padding: 30px;
-
+    footer {
+        background-color: #000;
+        color: #fff;
+        padding: 50px 0 0; /* Eliminé espacio extra abajo */
+        font-family: 'Poppins', sans-serif;
     }
     
-    .coffee-content h2{
-        padding: 0;
+    .footer-container {
+        display: flex;
+        justify-content: space-around;
+        max-width: 1100px;
+        margin: auto;
+        flex-wrap: wrap;
     }
-    .txt-p {
-        padding: 0;
+    
+    .footer-section {
+        width: 30%;
+        padding: 10px;
     }
-
-    .coffee-group {
-        flex-direction: column;
-        margin-bottom: 0;
+    
+    .footer-section h2 {
+        color: #fafafa;
+        font-size: 20px;
+        border-bottom: 2px solid #DAA520;
+        padding-bottom: 5px;
+        margin-bottom: 20px;
+    
     }
-
-    .coffee-img {
-        display: none;
+    
+    .footer-section p {
+        font-size: 14px;
+        line-height: 1.6;
     }
-
-    .services {
-        padding: 30px;
+    
+    .social-icons {
+        margin-top: 10px;
     }
-
-    .services-content p {
-        padding: 0;
-    }
-
-    .services-group {
-        flex-direction: colum;
-        margin-bottom: 0;
-    }
-
-    .services-1 {
-        margin-bottom: 25px;
-    }
-
-    .general {
-        flex-direction: column;
-    }
-
-    .general-1 {
-        width: 100%;
-        padding: 30px;
+    
+    .social-icons a {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        margin: 5px;
         text-align: center;
+        line-height: 40px;
+        background-color: #000000;
+        color: #ffffff;
+        transition: 0.3s;
+        border-radius: 5px; /* Cuadrado en lugar de redondo */
     }
-
-    .general-2, .general-3 {
-        display: none;
+    
+    .social-icons a:hover {
+        background-color: #DAA520;
+        color: #fff;
     }
-
-    .blog {
-        padding: 30px;
-    }
-
-    .blog-content {
+    
+    .contact-info {
+        display: flex;
         flex-direction: column;
+        gap: 10px; /* Espacio entre los iconos */
     }
-
-    .blog-1 {
+    
+    .contact-info div {
+        display: flex;
+        align-items: center;
+        gap: 8px; /* Espacio entre el icono y el texto */
+    }
+    
+    .contact-info i {
+        font-size: 18px;
+        color: #DAA520;
+    }
+    
+    .footer-section ul {
+        list-style: none;
         padding: 0;
     }
- 
-    .footer {
-        padding: 30px;
+    
+    .footer-section ul li {
+        margin: 10px 0;
     }
-
-    .footer-content {
-        flex-direction: column;
+    
+    .footer-section ul li a {
+        color: #fff;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    
+    .footer-section ul li a:hover {
+        color: #DAA520;
+    }
+    
+    /* Footer Bottom - Separado del resto */
+    .footer-bottom {
         text-align: center;
-    } 
-} 
-
-
-
-
+        background-color: #000000;
+        padding: 15px;
+        font-size: 14px;
+        margin-top: 30px;
+    }

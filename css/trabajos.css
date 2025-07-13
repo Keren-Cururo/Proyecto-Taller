@@ -14,6 +14,47 @@ body {
     margin: 0 auto;
 }
 
+.menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.menu .navbar ul li{
+    position: relative;
+    float: left;
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 20px;
+    color: #DAA520;
+    display: block;
+    font-weight: 600;
+}
+.menu .navbar ul li a:hover{
+    color: #8a8326;
+
+}
+
+#menu {
+    display: none;
+}
+
+.menu-icono {
+    width: 25px;
+}
+
+.menu label {
+    cursor: pointer;
+    display: none;
+}
+
 
 
 h1 {
@@ -89,87 +130,7 @@ h1 {
     object-fit: cover;
   }
  
-.menu {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
 
-.menu .navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.menu .navbar ul li {
-    position: relative;
-    float: left;
-}
-
-.menu .navbar ul li a {
-    font-size: 18px;
-    padding: 20px;
-    color: #DAA520;
-    display: block;
-    font-weight: 600;
-}
-
-.menu .navbar ul li a:hover {
-    color: #8a8326;
-}
-
-/* Estilos del submenú */
-.menu .navbar ul li .submenu {
-    display: none;
-    position: absolute;
-    background-color: #000000;
-    min-width: 150px;
-    top: 100%;
-    left: 0;
-    z-index: 1;
-    padding: 0;
-    margin-top: -19px;
-}
-
-.menu .navbar ul li .submenu li {
-    float: none;
-}
-
-.menu .navbar ul li .submenu li a {
-    font-size: 12px;
-    color: #f7e6e6;
-    padding: 8px 12px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-.menu .navbar ul li .submenu li a:hover {
-    background-color: #000000;
-    color: #DAA520;
-}
-
-/* Mostrar el submenú al pasar el mouse */
-.menu .navbar ul li:hover .submenu {
-    display: block;
-}
-
-#menu {
-    display: none;
-}
-
-.menu-icono {
-    width: 25px;
-}
-
-.menu label {
-    cursor: pointer;
-    display: none;
-}
 
 .header-content {
     text-align: center;
@@ -254,105 +215,105 @@ h1 {
 
 
 
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
+
+    footer {
+        background-color: #000;
+        color: #fff;
+        padding: 50px 0 0; /* Eliminé espacio extra abajo */
+        font-family: 'Poppins', sans-serif;
+    }
     
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
-
-footer {
-    background-color: #000;
-    color: #fff;
-    padding: 50px 0 0; /* Eliminé espacio extra abajo */
-    font-family: 'Poppins', sans-serif;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-around;
-    max-width: 1100px;
-    margin: auto;
-    flex-wrap: wrap;
-}
-
-.footer-section {
-    width: 30%;
-    padding: 10px;
-}
-
-.footer-section h2 {
-    color: #DAA520;
-    font-size: 20px;
-    border-bottom: 2px solid #DAA520;
-    padding-bottom: 5px;
-    margin-bottom: 20px;
-}
-
-.footer-section p {
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-.social-icons {
-    margin-top: 10px;
-}
-
-.social-icons a {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    margin: 5px;
-    text-align: center;
-    line-height: 40px;
-    background-color: #000000;
-    color: #ffffff;
-    transition: 0.3s;
-    border-radius: 5px; /* Cuadrado en lugar de redondo */
-}
-
-.social-icons a:hover {
-    background-color: #DAA520;
-    color: #fff;
-}
-
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: 10px; /* Espacio entre los iconos */
-}
-
-.contact-info div {
-    display: flex;
-    align-items: center;
-    gap: 8px; /* Espacio entre el icono y el texto */
-}
-
-.contact-info i {
-    font-size: 18px;
-    color: #DAA520;
-}
-
-.footer-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-section ul li {
-    margin: 10px 0;
-}
-
-.footer-section ul li a {
-    color: #fff;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.footer-section ul li a:hover {
-    color: #DAA520;
-}
-
-/* Footer Bottom - Separado del resto */
-.footer-bottom {
-    text-align: center;
-    background-color: #000000;
-    padding: 15px;
-    font-size: 14px;
-    margin-top: 30px;
-}
+    .footer-container {
+        display: flex;
+        justify-content: space-around;
+        max-width: 1100px;
+        margin: auto;
+        flex-wrap: wrap;
+    }
+    
+    .footer-section {
+        width: 30%;
+        padding: 10px;
+    }
+    
+    .footer-section h2 {
+        color: #fafafa;
+        font-size: 20px;
+        border-bottom: 2px solid #DAA520;
+        padding-bottom: 5px;
+        margin-bottom: 20px;
+    
+    }
+    
+    .footer-section p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    
+    .social-icons {
+        margin-top: 10px;
+    }
+    
+    .social-icons a {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+        text-align: center;
+        line-height: 40px;
+        background-color: #000000;
+        color: #ffffff;
+        transition: 0.3s;
+        border-radius: 5px; /* Cuadrado en lugar de redondo */
+    }
+    
+    .social-icons a:hover {
+        background-color: #DAA520;
+        color: #fff;
+    }
+    
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 10px; /* Espacio entre los iconos */
+    }
+    
+    .contact-info div {
+        display: flex;
+        align-items: center;
+        gap: 8px; /* Espacio entre el icono y el texto */
+    }
+    
+    .contact-info i {
+        font-size: 18px;
+        color: #DAA520;
+    }
+    
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .footer-section ul li {
+        margin: 10px 0;
+    }
+    
+    .footer-section ul li a {
+        color: #fff;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    
+    .footer-section ul li a:hover {
+        color: #DAA520;
+    }
+    
+    /* Footer Bottom - Separado del resto */
+    .footer-bottom {
+        text-align: center;
+        background-color: #000000;
+        padding: 15px;
+        font-size: 14px;
+        margin-top: 30px;
+    }

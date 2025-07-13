@@ -28,7 +28,7 @@ const upload = multer({
         }
         cb("Tipo de archivo no soportado");
     },
-    limits: { fileSize: 1024 * 1024 * 1 }, // Aproximadamente 1 MB
+    limits: { fileSize: 2000 * 2000 * 2 }, // Aproximadamente 1 MB
 });
 
 //// RUTAS ////
