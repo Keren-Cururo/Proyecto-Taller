@@ -7,6 +7,8 @@ const app = express();
 const cors = require('cors');
 app.use(cors()); // Permitir todos los orígenes
 app.use(express.json());
+
+
 const path = require('path');
 
 // en el cuerpo de la peticion viene un json, lo voy a transformar en un objeto JS y de esta manera
@@ -51,11 +53,10 @@ const trabajos_realizadosRouter = require('./node_9_taller/routers/trabajos_real
 app.use('/trabajos_realizados', trabajos_realizadosRouter);
 
 
+// Ruta principal: devolver index.html
 app.get("/", (req, res) => {
-    res.send("Hola taller");
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
-// Esta es la ruta principal del proyecto "/"
-
 
 const PORT = process.env.PORT || 3000;// que coloque en el puerto lo que este definido en el servidor o por default 3000. env=enviroment
 
