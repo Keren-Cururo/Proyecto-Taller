@@ -1,20 +1,17 @@
-
-
 // CONTROLADORES DEL MODULO ///
 const db = require("../db/db");
-const jwt = require("jsonwebtoken"); // Importamos la libreria que nos ayuda a autenticar
-const fs = require('fs'); // Proporciona una API que interactua con archivos, puede renombrar archivos, leerlos, darles nombre, eliminarlos, etc.
-const bcrypt = require("bcryptjs"); // Importamos la libreria que nos ayuda a hacer el hash
+const jwt = require("jsonwebtoken");
+const fs = require('fs');
+const bcrypt = require("bcryptjs");
 const path = require("path");
 
 const registerUsuario = (req, res) => {
-    console.log('Archivo recibido:', req.file);  // Mostrar el archivo de imagen si hay uno
+    console.log('Archivo recibido:', req.file);
     let imageName = "";
     if (req.file) {
         imageName = req.file.filename;
     }
 
-    // 🔥 Cambiado a snake_case para que coincida con el FormData del frontend
     const {
         nombre_usuario,
         apellido_usuario,
@@ -27,19 +24,17 @@ const registerUsuario = (req, res) => {
         id_localidad
     } = req.body;
 
-    // Encriptar la contraseña
     const hash = bcrypt.hashSync(password, 8);
     console.log('Hash de la contraseña:', hash);
 
-    // Verificar si el usuario ya existe
     db.query('SELECT * FROM usuarios WHERE correo_electronico = ?', [correo_electronico], (error, result) => {
         if (error) {
             console.error("Error al verificar la existencia del usuario:", error);
-            return res.status(500).send("Error verificando la existencia del usuario.");
+            return res.status(500).json({ error: "Error verificando la existencia del usuario." });
         }
 
         if (result.length > 0) {
-            return res.status(400).send("Ya existe un usuario con ese correo electrónico.");
+            return res.status(400).json({ error: "Ya existe un usuario con ese correo electrónico." });
         }
 
         const sql = `
@@ -68,13 +63,17 @@ const registerUsuario = (req, res) => {
             }
 
             const userId = result.insertId;
-
-            // Generar un token JWT con el ID del usuario
             const token = jwt.sign({ id: userId }, process.env.SECRET_KEY, { expiresIn: "1h" });
             console.log('Token generado para el nuevo usuario:', token);
 
             const userCreado = { ...req.body, id: userId };
-            res.status(201).json({ userCreado, token });
+
+            // ✅ RESPUESTA COMPATIBLE CON EL FRONTEND
+            res.status(201).json({ 
+                message: "¡Registro exitoso, bienvenido!", 
+                user: userCreado,
+                token 
+            });
         });
     });
 };
