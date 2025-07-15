@@ -1,12 +1,12 @@
 const carruseles = document.querySelectorAll('.carrusel');
 
 const imagenesPorCarrusel = [
-  ['/images/p1.jpg', '/images/auto8.jpg', '/images/carr.jpg'], // Carrusel 1
-  ['/images/autov.jpg', 'uploads/imagen5.jpg', 'uploads/imagen6.jpg'], // Carrusel 2
-  ['uploads/imagen7.jpg', 'uploads/imagen8.jpg', 'uploads/imagen9.jpg'], // Carrusel 3
-  ['uploads/imagen10.jpg', 'uploads/imagen11.jpg', 'uploads/imagen12.jpg'], // Carrusel 4
-  ['uploads/imagen13.jpg', 'uploads/imagen14.jpg', 'uploads/imagen15.jpg'], // Carrusel 5
-  ['uploads/imagen16.jpg', 'uploads/imagen17.jpg', 'uploads/imagen18.jpg']  // Carrusel 6
+  ['/images/autov.jpg', '/images/auto8.jpg', '/images/carr.jpg'], // Carrusel 1
+  ['/images/auto5.jpg', '/images/auto8.jpg', '/images/carr.jpg'], // Carrusel 2
+  ['/images/pe123.jpg', 'uploads/imagen8.jpg', 'uploads/imagen9.jpg'], // Carrusel 3
+  ['/images/pexel123.jpg', 'uploads/imagen11.jpg', 'uploads/imagen12.jpg'], // Carrusel 4
+  ['/images/hyun.jpg', 'uploads/imagen14.jpg', 'uploads/imagen15.jpg'], // Carrusel 5
+  ['/images/pexelcar.jpg', 'uploads/imagen17.jpg', 'uploads/imagen18.jpg']  // Carrusel 6
 ];
 
 carruseles.forEach((carrusel, index) => {
