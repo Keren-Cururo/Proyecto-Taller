@@ -8,3 +8,6 @@ https://docs.google.com/document/d/1w-E4Kz4VFxPwngC4ZwgLQLFncgUx6q5F/edit?usp=sh
 
 **Link Vercel:**  
 https://cururo-hermanos-front-end-vl5x.vercel.app/HTML/index.html  
+
+**Link PPT*
+https://www.canva.com/design/DAGsmvLjcHU/8GhMk1N3osNXsoBHATFnog/edit?utm_content=DAGsmvLjcHU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
