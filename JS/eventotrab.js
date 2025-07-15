@@ -6,7 +6,7 @@ const imagenesPorCarrusel = [
   ['/images/pe123.jpg', 'uploads/imagen8.jpg', 'uploads/imagen9.jpg'], // Carrusel 3
   ['/images/pexel123.jpg', 'uploads/imagen11.jpg', 'uploads/imagen12.jpg'], // Carrusel 4
   ['/images/hyun.jpg', 'uploads/imagen14.jpg', 'uploads/imagen15.jpg'], // Carrusel 5
-  ['/images/pexelcar.jpg', 'uploads/imagen17.jpg', 'uploads/imagen18.jpg']  // Carrusel 6
+  ['/images/pexelcar  .jpg', 'uploads/imagen17.jpg', 'uploads/imagen18.jpg']  // Carrusel 6
 ];
 
 carruseles.forEach((carrusel, index) => {
