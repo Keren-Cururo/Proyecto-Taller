@@ -43,9 +43,13 @@ body{
     padding: 0;
 }
 
-.menu .navbar ul li {
-    position: relative;
-    float: left;
+.menu .navbar ul{
+    display:flex;
+    gap:20px;
+}
+
+.menu .navbar ul li{
+    list-style:none;
 }
 
 .menu .navbar ul li a {
@@ -100,15 +104,15 @@ body{
     display: none;
 }
 
-.menu-icono {
-    width: 25px;
+.menu-icon{
+    font-size:28px;
+    color:#DAA520;
+    cursor:pointer;
+    display:none;
 }
-
 .menu label {
     cursor: pointer;
-    display: none;
 }
-
 
 .header-content{
     text-align: center;
@@ -127,7 +131,7 @@ body{
 .header-content p {
     font-size: 30px;
     color: #f7e6e6;
-    padding: 0 250px;
+    padding: 0 20px;
     margin-bottom: 25px;
     text-shadow: 2px 2px 4px black; 
 }
@@ -176,9 +180,7 @@ p{
 .txt-p {
     font-size: 16px;
     color: #c5c5c5;
-
-
-    padding: 0 250px;
+    padding: 0 20px;
     margin-bottom: 35px;
 }
 
@@ -292,6 +294,7 @@ h2{
     background-repeat: no-repeat;
     background-size: cover;
     width: 50%;
+    min-height: 400px;
 }
 
 .general-3 {
@@ -313,7 +316,7 @@ h2 {
 
 
 .sucursal {
-    width: 120%; /* Ajusta el tamaño a mediano */
+    width: 100%; /* Ajusta el tamaño a mediano */
     margin-left: 0; /* Alinea a la izquierda */
     border: 1px solid #000000; /* Opcional: añade un borde para mejor visualización */
     padding: 10px; /* Opcional: añade un poco de padding */
@@ -438,3 +441,377 @@ iframe {
         font-size: 14px;
         margin-top: 30px;
     }
+
+/* TESTIMONIOS */
+
+.testimonios{
+    padding:90px 0;
+    background:#000000;
+    text-align:center;
+}
+
+.titulo-testimonios{
+    font-size:55px;
+    color:#DAA520;
+    margin-bottom:60px;
+}
+
+.carousel-container{
+    position:relative;
+    width:100%;
+    max-width:1100px;
+    margin:auto;
+    overflow:hidden;
+}
+
+.carousel-track{
+    display:flex;
+    gap:30px;
+    transition:transform 0.6s ease;
+}
+
+.testimonio-card{
+    min-width:320px;
+    background:#0c0c0c;
+    padding:30px;
+    border-radius:12px;
+    color:white;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.5);
+    transition:transform 0.3s;
+}
+
+.testimonio-card:hover{
+    transform:translateY(-8px);
+}
+
+.cliente-img{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:15px;
+    border:3px solid #DAA520;
+}
+
+.testimonio-card p{
+    font-size:16px;
+    margin-bottom:15px;
+}
+
+.testimonio-card h4{
+    color:#DAA520;
+}
+
+.arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:#DAA520;
+    border:none;
+    font-size:25px;
+    padding:10px 15px;
+    cursor:pointer;
+    border-radius:6px;
+}
+
+.left{
+    left:-50px;
+}
+
+.right{
+    right:-50px;
+}
+
+/* ========================= */
+/* RESPONSIVE TABLET / MOVIL */
+/* ========================= */
+
+.menu-icon{
+    font-size:28px;
+    color:#DAA520;
+    cursor:pointer;
+    display:none;
+}
+
+#menu{
+    display:none;
+}
+
+@media (max-width:768px){
+
+/* MENU */
+
+.menu{
+    padding:20px;
+}
+
+.menu-icon{
+    display:block;
+}
+
+.navbar{
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    background:#000;
+    display:none;
+}
+
+.navbar ul{
+    display:flex;
+    flex-direction:column;
+    text-align:center;
+}
+
+.navbar ul li{
+    padding:10px 0;
+}
+
+.navbar ul li a{
+    display:block;
+}
+
+/* mostrar menu al hacer click */
+
+#menu:checked ~ .navbar{
+    display:block;
+}
+
+/* HEADER */
+
+.header-content h1{
+    font-size:42px;
+    line-height:45px;
+}
+
+.header-content p{
+    font-size:18px;
+    padding:0 20px;
+}
+
+/* SECCION POR QUE ELEGIRNOS */
+
+.txt-p{
+    padding:0 20px;
+}
+
+.coffee-group{
+    flex-direction:column;
+    gap:40px;
+}
+
+.coffee-1{
+    padding:0 20px;
+}
+
+/* SERVICIOS */
+
+.services-group{
+    flex-direction:column;
+    align-items:center;
+}
+
+.services-1{
+    padding:0 20px;
+}
+
+.services-1 img{
+    width:100%;
+    max-width:350px;
+}
+
+/* MAPA */
+
+.sucursal{
+    width:100%;
+    margin-top:20px;
+}
+
+/* SECCIONES GENERALES */
+
+.general{
+    flex-direction:column;
+}
+
+.general-1{
+    width:100%;
+    padding:50px 20px;
+}
+
+.general-2,
+.general-3{
+    width:100%;
+    height:250px;
+}
+
+/* TESTIMONIOS */
+
+.carousel-container{
+    width:100%;
+}
+
+.testimonio-card{
+    min-width:260px;
+}
+
+/* FOOTER */
+
+.footer-container{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+
+.footer-section{
+    width:100%;
+}
+
+}
+
+/* ========================= */
+/* CELULARES CHICOS */
+/* ========================= */
+
+@media (max-width:480px){
+
+.header-content h1{
+    font-size:32px;
+}
+
+.titulo-testimonios{
+    font-size:32px;
+}
+
+h2{
+    font-size:32px;
+    line-height:38px;
+}
+
+.btn-1{
+    padding:10px 20px;
+    font-size:14px;
+}
+
+}
+
+.menu-icon{
+    font-size:28px;
+    color:#DAA520;
+    cursor:pointer;
+    display:none;
+}
+
+@media (max-width:768px){
+
+.menu-icon{
+    display:block;
+}
+
+}
+
+/* =======================================================
+   CORRECCIONES PARA EL MENÚ MÓVIL (768px o menos)
+   ======================================================= */
+@media (max-width: 768px) {
+    /* 1. Barra superior: icono a la derecha */
+    .menu {
+        position: absolute; 
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        display: flex;
+        justify-content: flex-end; /* Mueve el icono a la derecha */
+        align-items: center;
+        padding: 0 20px;
+        background-color: transparent;
+        z-index: 3000;
+    }
+
+    .menu-icon {
+        display: block;
+        background: rgba(0, 0, 0, 0.7); 
+        padding: 8px 12px;
+        border-radius: 5px;
+        z-index: 3001;
+        border: 1px solid rgba(218, 165, 32, 0.3); /* Borde sutil dorado */
+    }
+/* 2. El menú desplegable: súper compacto a la derecha */
+    .navbar {
+        display: none; 
+        position: absolute; 
+        top: 60px; /* Un poquito más arriba */
+        right: 20px; 
+        left: auto;
+        width: 140px; /* Un pelín más estrecho aún */
+        height: auto; 
+        background-color: rgba(0, 0, 0, 0.95); 
+        border: 1px solid #DAA520;
+        z-index: 2999;
+        box-shadow: -5px 5px 15px rgba(0,0,0,0.5);
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        padding: 5px 0; /* Casi nada de espacio arriba y abajo */
+        gap: 0;
+    }
+
+    .navbar ul li {
+        width: 100%;
+        text-align: right;
+    }
+
+    .navbar ul li a {
+        font-size: 14px; 
+        padding: 8px 15px; /* Reduje de 12px a 8px para acercar las opciones */
+        color: #DAA520;
+        display: block;
+        border-bottom: 1px solid #222;
+        line-height: 1; /* Evita espacio extra entre líneas de texto */
+    }
+
+    .navbar ul li:last-child a {
+        border-bottom: none;
+    }
+
+    /* 3. El activador */
+    #menu:checked ~ .navbar {
+        display: block;
+    }
+
+    /* 4. Contenido centrado sin estorbos */
+    .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header-content {
+        width: 100%;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .header-content h1 {
+        font-size: 32px;
+    }
+}
+/* =======================================================
+   AJUSTE PARA EL CARRUSEL EN MÓVIL
+   ======================================================= */
+@media (max-width: 480px) {
+    .testimonio-card {
+        min-width: 100%; /* En celulares pequeños, una tarjeta ocupa todo el ancho */
+    }
+    
+    .arrow {
+        display: none; /* Es mejor ocultar las flechas y usar el auto-scroll en móviles */
+    }
+
+    .titulo-testimonios {
+        font-size: 28px;
+    }
+}

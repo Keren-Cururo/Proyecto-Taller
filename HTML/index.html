@@ -12,10 +12,13 @@
     <header class="header" >
         <div class="menu container">
               <a href="#" class="logo"></a>
+              
               <input type="checkbox" id="menu"/>
-              <label for="menu">
-                  <!-- <img src="images/menu.png" class="menu-icono" alt=""> parte responsive -->
-              </label>
+
+            <label for="menu" class="menu-icon">
+             <i class="fas fa-bars"></i>
+            </label>
+
               <nav class="navbar">
                   <ul>
                       <li><a href="index.html">Inicio</a></li>
@@ -68,7 +71,7 @@
 
               <div class="coffee-1">
                 <img src="/images/transport.png" alt="">
-                  <p>
+                  
                     <h3>Seguimiento personalizado a cada vehículo</h3>
                 <p>
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo
@@ -117,9 +120,56 @@
             </div>
         </div>
     </main>
+<section class="testimonios">
 
+    <h2 class="titulo-testimonios">Lo que dicen nuestros clientes</h2>
 
-    
+    <div class="carousel-container">
+
+        <button class="arrow left">&#10094;</button>
+
+        <div class="carousel-track">
+
+            <div class="testimonio-card">
+                <img src="/images/auto7.jpg" class="cliente-img">
+                <p>
+                    Excelente servicio, muy atentos y rápidos con el arreglo de mi auto.
+                </p>
+                <h4>Juan Pérez</h4>
+            </div>
+
+            <div class="testimonio-card">
+                <img src="/images/auto7.jpg" class="cliente-img">
+                <p>
+                    Siempre traigo mi vehículo aquí. Muy profesionales y confiables.
+                </p>
+                <h4>María López</h4>
+            </div>
+
+            <div class="testimonio-card">
+                <img src="/images/auto7.jpg" class="cliente-img">
+                <p>
+                    Precios justos y excelente atención. Muy recomendable.
+                </p>
+                <h4>Carlos Gómez</h4>
+            </div>
+
+            <div class="testimonio-card">
+                <img src="/images/auto7.jpg" class="cliente-img">
+                <p>
+                    El mejor taller de la zona, muy buena atención al cliente.
+                </p>
+                <h4>Lucía Fernández</h4>
+            </div>
+
+        </div>
+
+        <button class="arrow right">&#10095;</button>
+
+    </div>
+
+</section>
+
     <section class="general">
         <div class="general-1">
             <h2>Recibi la atención que mereces</h2>
@@ -184,7 +234,26 @@
     </footer>
 
 
+<script>
 
+const track = document.querySelector(".carousel-track");
+const cards = document.querySelectorAll(".testimonio-card");
+
+let index = 0;
+
+function moverCarrusel(){
+    index++;
+
+    if(index > cards.length - 3){
+        index = 0;
+    }
+
+    track.style.transform = `translateX(-${index * 350}px)`;
+}
+
+setInterval(moverCarrusel, 4000);
+
+</script>
    
 </body>
 </html>
