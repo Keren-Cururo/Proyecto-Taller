@@ -682,7 +682,6 @@ iframe {
 #menu {
     display: none;
 }
-
 @media (max-width: 768px) {
     /* 1. ESTRUCTURA GLOBAL Y ANTI-DESBORDE */
     html, body {
@@ -732,8 +731,9 @@ iframe {
 
     /* 3. HEADER */
     .header-content h1 {
-        font-size: 50px !important;
-        line-height: 1.2;
+        font-size: 38px !important; /* Bajamos un poco para que no se encime */
+        line-height: 1.1;
+        word-wrap: break-word;
     }
 
     .header-content p {
@@ -741,7 +741,7 @@ iframe {
         padding: 0 20px;
     }
 
-    /* 4. SECCIONES GENERAL (ATENCIÓN Y SERVICIOS) */
+    /* 4. SECCIONES GENERAL - IMÁGENES MÁS GRANDES */
     .general {
         display: flex !important;
         flex-direction: column !important;
@@ -753,18 +753,15 @@ iframe {
         width: 100% !important;
         padding: 40px 20px !important;
         text-align: center !important;
-        order: 1; /* Texto arriba */
+        order: 1;
     }
 
-    /* ARREGLO DE IMÁGENES: MISMO TAMAÑO Y SIN DEFORMAR */
     .general-2, .general-3 {
         width: 100% !important;
-        height: 350px !important; /* Altura igualada */
+        height: 450px !important; /* AGRANDADAS como pediste */
         display: block !important;
-        order: 2; /* Imagen abajo */
+        order: 2;
         object-fit: cover !important;
-        background-size: cover !important;
-        background-position: center !important;
     }
 
     /* 5. POR QUÉ ELEGIRNOS Y SERVICIOS */
@@ -778,36 +775,55 @@ iframe {
         width: 100%;
         max-width: 350px;
     }
-/* 5. AJUSTE DEL MAPA (IFRAME) CON FONDO NEGRO EXTENDIDO */
+
+    /* AJUSTE "¿DONDE NOS ENCONTRAMOS?" PARA QUE NO SE CORTE */
+    .sucursal h2 {
+        font-size: 7vw !important; /* Tamaño fluido para que entre la 'S' */
+        white-space: normal;
+        text-align: center;
+        width: 100%;
+    }
+
     .sucursal {
         width: 100% !important;
-        padding: 0 12% !important; /* Lo hacemos más angosto lateralmente */
+        padding: 0 12% !important;
         box-sizing: border-box !important;
         margin-top: 20px !important;
-        
-        /* ESTO ES LO QUE CREA EL ESPACIO NEGRO INFINITO ABAJO */
-        padding-bottom: 120px !important; 
+        padding-bottom: 100px !important; 
         background-color: #000000 !important;
-        display: block !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     iframe {
         width: 100% !important;
-        height: 200px !important; /* Un poco más petiso para que se vea más angosto */
-        border-radius: 15px; 
+        height: 220px !important; 
+        border-radius: 10px; /* Un poco de curva queda mejor */
         border: 2px solid #DAA520 !important; 
         box-shadow: 0 8px 20px rgba(0,0,0,0.8);
         display: block;
     }
-    /* 6. TESTIMONIOS Y FOOTER */
+
+    /* 6. TESTIMONIOS (CARRUSEL DE 2 CARDS) */
     .carousel-container {
         width: 100% !important;
         overflow: hidden !important;
+        padding: 20px 0;
+    }
+
+    .carousel-track {
+        display: flex;
+        gap: 10px;
+        padding: 0 10px;
     }
 
     .testimonio-card {
-        min-width: 280px !important;
-        margin: 10px !important;
+        /* Con calc(50% - 15px) entran dos cards perfectas */
+        min-width: calc(50% - 15px) !important; 
+        margin: 0 !important;
+        box-sizing: border-box;
+        padding: 15px;
     }
 
     .footer-container {
