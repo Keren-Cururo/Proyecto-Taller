@@ -668,152 +668,155 @@ iframe {
     width:100%;
 }
 
+}/* ============================================================
+   DISEÑO MÓVIL FINAL (UNIFICADO Y SIN REDUNDANCIAS)
+   ============================================================ */
+
+.menu-icon {
+    font-size: 28px;
+    color: #DAA520;
+    cursor: pointer;
+    display: none;
 }
+
+#menu {
+    display: none;
+}
+
 @media (max-width: 768px) {
-    /* 1. BARRA SUPERIOR: Menu a la derecha (Versión que te funcionó) */
+    /* 1. ESTRUCTURA GLOBAL Y ANTI-DESBORDE */
+    html, body {
+        overflow-x: hidden !important;
+        width: 100vw !important;
+        position: relative;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* 2. MENÚ Y NAVBAR (A LA DERECHA) */
     .menu {
-        position: absolute; 
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 70px;
-        display: flex;
-        justify-content: flex-end; 
-        align-items: center;
-        padding: 0 20px;
-        background-color: transparent;
-        z-index: 3000;
+        display: flex !important;
+        justify-content: flex-end !important;
+        padding: 20px !important;
     }
 
     .menu-icon {
-        display: block;
-        background: rgba(0, 0, 0, 0.7); 
-        padding: 8px 12px;
-        border-radius: 5px;
-        z-index: 3001;
-        border: 1px solid rgba(218, 165, 32, 0.3);
+        display: block !important;
     }
 
-    /* 2. NAVBAR: Desplegable compacto a la derecha */
     .navbar {
-        display: none; 
-        position: absolute; 
-        top: 60px; 
-        right: 20px; 
-        left: auto;
-        width: 140px; 
-        height: auto; 
-        background-color: rgba(0, 0, 0, 0.95); 
+        position: absolute;
+        top: 100%;
+        right: 10px !important;
+        left: auto !important;
+        width: 180px !important;
+        background: #000;
+        display: none;
+        z-index: 1000;
         border: 1px solid #DAA520;
-        z-index: 2999;
-        box-shadow: -5px 5px 15px rgba(0,0,0,0.5);
     }
 
     .navbar ul {
+        display: flex;
         flex-direction: column;
-        padding: 5px 0;
-        gap: 0;
+        text-align: center;
     }
 
     .navbar ul li {
-        width: 100%;
-        text-align: right;
-    }
-
-    .navbar ul li a {
-        font-size: 14px; 
-        padding: 8px 15px; 
-        color: #DAA520;
-        display: block;
-        border-bottom: 1px solid #222;
-        line-height: 1;
-    }
-
-    .navbar ul li:last-child a {
-        border-bottom: none;
+        padding: 10px 0;
     }
 
     #menu:checked ~ .navbar {
         display: block !important;
     }
 
-    /* 3. HEADER: Titulo grande corregido */
-    .header-content {
-        width: 100%;
-        text-align: center;
-        padding: 80px 20px 40px 20px !important; /* Añadí espacio arriba para que el título no choque con el menú */
-    }
-
+    /* 3. HEADER */
     .header-content h1 {
-        font-size: 45px !important;
-        line-height: 1.1;
+        font-size: 35px !important;
+        line-height: 1.2;
     }
 
-    /* 4. SECCIÓN "RECIBÍ LA ATENCIÓN QUE MERECES" (Arreglado) */
+    .header-content p {
+        font-size: 18px;
+        padding: 0 20px;
+    }
+
+    /* 4. SECCIONES GENERAL (ATENCIÓN Y SERVICIOS) */
     .general {
-        flex-direction: column;
-        align-items: center;
+        display: flex !important;
+        flex-direction: column !important;
+        height: auto !important;
+        background: #000;
     }
 
     .general-1 {
         width: 100% !important;
-        padding: 30px 20px !important; 
-        box-sizing: border-box;
-        text-align: center;
+        padding: 40px 20px !important;
+        text-align: center !important;
+        order: 1; /* Texto arriba */
     }
 
-    .general-1 h2 {
-        font-size: 32px !important;
-        word-wrap: break-word;
-        margin-bottom: 15px;
+    /* ARREGLO DE IMÁGENES: MISMO TAMAÑO Y SIN DEFORMAR */
+    .general-2, .general-3 {
+        width: 100% !important;
+        height: 350px !important; /* Altura igualada */
+        display: block !important;
+        order: 2; /* Imagen abajo */
+        object-fit: cover !important;
+        background-size: cover !important;
+        background-position: center !important;
     }
 
-    .general-1 p {
-        font-size: 16px !important;
-        margin-bottom: 20px;
-    }
-
-    .btn-1, .informacion {
-        display: inline-block !important;
-        margin: 10px 5px;
-    }
-
-    /* 5. SERVICIOS: Sin espacios gigantes */
-    .services-group {
-        flex-direction: column;
+    /* 5. POR QUÉ ELEGIRNOS Y SERVICIOS */
+    .coffee-group, .services-group {
+        flex-direction: column !important;
+        align-items: center !important;
         gap: 20px;
-        padding: 0 10px;
-        align-items: center;
-    }
-
-    .services-1 {
-        padding: 15px !important;
-        text-align: center;
     }
 
     .services-1 img {
         width: 100%;
-        max-width: 280px !important;
-        margin: 0 auto;
+        max-width: 350px;
     }
-}
+/* 5. AJUSTE DEL MAPA (IFRAME) CON FONDO NEGRO EXTENDIDO */
+    .sucursal {
+        width: 100% !important;
+        padding: 0 12% !important; /* Lo hacemos más angosto lateralmente */
+        box-sizing: border-box !important;
+        margin-top: 20px !important;
+        
+        /* ESTO ES LO QUE CREA EL ESPACIO NEGRO INFINITO ABAJO */
+        padding-bottom: 120px !important; 
+        background-color: #000000 !important;
+        display: block !important;
+    }
 
+    iframe {
+        width: 100% !important;
+        height: 200px !important; /* Un poco más petiso para que se vea más angosto */
+        border-radius: 15px; 
+        border: 2px solid #DAA520 !important; 
+        box-shadow: 0 8px 20px rgba(0,0,0,0.8);
+        display: block;
+    }
+    /* 6. TESTIMONIOS Y FOOTER */
+    .carousel-container {
+        width: 100% !important;
+        overflow: hidden !important;
+    }
 
-/* =======================================================
-   AJUSTE PARA EL CARRUSEL EN MÓVIL
-   ======================================================= */
-@media (max-width: 480px) {
     .testimonio-card {
-        min-width: 100%; /* En celulares pequeños, una tarjeta ocupa todo el ancho */
-    }
-    
-    .arrow {
-        display: none; /* Es mejor ocultar las flechas y usar el auto-scroll en móviles */
+        min-width: 280px !important;
+        margin: 10px !important;
     }
 
-    .titulo-testimonios {
-        font-size: 28px;
+    .footer-container {
+        flex-direction: column !important;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-section {
+        width: 100% !important;
     }
 }
-
-
