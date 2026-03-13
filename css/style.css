@@ -731,7 +731,7 @@ iframe {
 
 /* 3. HEADER - Ajuste para títulos largos */
     .header-content h1 {
-        font-size: 32px !important; /* Un poco más pequeño para asegurar que entre */
+        font-size: 50px !important; /* Un poco más pequeño para asegurar que entre */
         line-height: 1.1;
         word-wrap: break-word;
         overflow-wrap: break-word; /* Fuerza el quiebre si es necesario */
