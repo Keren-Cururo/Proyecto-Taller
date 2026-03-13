@@ -669,53 +669,8 @@ iframe {
 }
 
 }
-
-/* ========================= */
-/* CELULARES CHICOS */
-/* ========================= */
-
-@media (max-width:480px){
-
-.header-content h1{
-    font-size:32px;
-}
-
-.titulo-testimonios{
-    font-size:32px;
-}
-
-h2{
-    font-size:32px;
-    line-height:38px;
-}
-
-.btn-1{
-    padding:10px 20px;
-    font-size:14px;
-}
-
-}
-
-.menu-icon{
-    font-size:28px;
-    color:#DAA520;
-    cursor:pointer;
-    display:none;
-}
-
-@media (max-width:768px){
-
-.menu-icon{
-    display:block;
-}
-
-}
-
-/* =======================================================
-   CORRECCIONES PARA EL MENÚ MÓVIL (768px o menos)
-   ======================================================= */
 @media (max-width: 768px) {
-    /* 1. Barra superior: icono a la derecha */
+    /* 1. BARRA SUPERIOR: Menu a la derecha (Versión que te funcionó) */
     .menu {
         position: absolute; 
         top: 0;
@@ -723,7 +678,7 @@ h2{
         width: 100%;
         height: 70px;
         display: flex;
-        justify-content: flex-end; /* Mueve el icono a la derecha */
+        justify-content: flex-end; 
         align-items: center;
         padding: 0 20px;
         background-color: transparent;
@@ -736,16 +691,17 @@ h2{
         padding: 8px 12px;
         border-radius: 5px;
         z-index: 3001;
-        border: 1px solid rgba(218, 165, 32, 0.3); /* Borde sutil dorado */
+        border: 1px solid rgba(218, 165, 32, 0.3);
     }
-/* 2. El menú desplegable: súper compacto a la derecha */
+
+    /* 2. NAVBAR: Desplegable compacto a la derecha */
     .navbar {
         display: none; 
         position: absolute; 
-        top: 60px; /* Un poquito más arriba */
+        top: 60px; 
         right: 20px; 
         left: auto;
-        width: 140px; /* Un pelín más estrecho aún */
+        width: 140px; 
         height: auto; 
         background-color: rgba(0, 0, 0, 0.95); 
         border: 1px solid #DAA520;
@@ -755,7 +711,7 @@ h2{
 
     .navbar ul {
         flex-direction: column;
-        padding: 5px 0; /* Casi nada de espacio arriba y abajo */
+        padding: 5px 0;
         gap: 0;
     }
 
@@ -766,39 +722,83 @@ h2{
 
     .navbar ul li a {
         font-size: 14px; 
-        padding: 8px 15px; /* Reduje de 12px a 8px para acercar las opciones */
+        padding: 8px 15px; 
         color: #DAA520;
         display: block;
         border-bottom: 1px solid #222;
-        line-height: 1; /* Evita espacio extra entre líneas de texto */
+        line-height: 1;
     }
 
     .navbar ul li:last-child a {
         border-bottom: none;
     }
 
-    /* 3. El activador */
     #menu:checked ~ .navbar {
-        display: block;
+        display: block !important;
     }
 
-    /* 4. Contenido centrado sin estorbos */
-    .header {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
+    /* 3. HEADER: Titulo grande corregido */
     .header-content {
         width: 100%;
         text-align: center;
-        padding: 0 20px;
+        padding: 80px 20px 40px 20px !important; /* Añadí espacio arriba para que el título no choque con el menú */
     }
 
     .header-content h1 {
-        font-size: 32px;
+        font-size: 45px !important;
+        line-height: 1.1;
+    }
+
+    /* 4. SECCIÓN "RECIBÍ LA ATENCIÓN QUE MERECES" (Arreglado) */
+    .general {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .general-1 {
+        width: 100% !important;
+        padding: 30px 20px !important; 
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .general-1 h2 {
+        font-size: 32px !important;
+        word-wrap: break-word;
+        margin-bottom: 15px;
+    }
+
+    .general-1 p {
+        font-size: 16px !important;
+        margin-bottom: 20px;
+    }
+
+    .btn-1, .informacion {
+        display: inline-block !important;
+        margin: 10px 5px;
+    }
+
+    /* 5. SERVICIOS: Sin espacios gigantes */
+    .services-group {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 10px;
+        align-items: center;
+    }
+
+    .services-1 {
+        padding: 15px !important;
+        text-align: center;
+    }
+
+    .services-1 img {
+        width: 100%;
+        max-width: 280px !important;
+        margin: 0 auto;
     }
 }
+
+
 /* =======================================================
    AJUSTE PARA EL CARRUSEL EN MÓVIL
    ======================================================= */
@@ -817,43 +817,3 @@ h2{
 }
 
 
-/* =======================================================
-   REPARACIÓN DE CENTRADO PARA MÓVILES (Samsung A52 y otros)
-   ======================================================= */
-@media (max-width: 768px) {
-    
-    /* 1. Forzar que todos los contenedores principales usen todo el ancho disponible */
-    .container, .header-content, .general, .services-group, .coffee-group {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding-left: 10px !important;
-        padding-right: 10px !important;
-        margin: 0 auto !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important; /* Centra los elementos hijos horizontalmente */
-        text-align: center !important; /* Centra los textos */
-    }
-
-    /* 2. Reparar las imágenes que se salen de los bordes o están de lado */
-    img {
-        max-width: 90% !important; /* Evita que toquen los bordes del celular */
-        height: auto !important;
-        margin: 0 auto !important; /* Las centra si son más pequeñas que el contenedor */
-        display: block !important;
-    }
-
-    /* 3. Específicamente para la sección "¿Dónde nos encontramos?" de tu captura */
-    .general-1 img, .services-1 img {
-        width: 100% !important;
-        max-width: 350px !important; /* Ajusta este valor al tamaño que quieras la foto */
-        border-radius: 10px;
-    }
-
-    /* 4. Ajuste de títulos para que no se corten */
-    h1, h2, h3 {
-        width: 100% !important;
-        padding: 0 5px !important;
-        word-wrap: break-word; /* Evita que palabras largas empujen el diseño a la derecha */
-    }
-}
