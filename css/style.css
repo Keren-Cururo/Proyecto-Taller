@@ -729,11 +729,13 @@ iframe {
         display: block !important;
     }
 
-    /* 3. HEADER */
+/* 3. HEADER - Ajuste para títulos largos */
     .header-content h1 {
-        font-size: 38px !important; /* Bajamos un poco para que no se encime */
+        font-size: 32px !important; /* Un poco más pequeño para asegurar que entre */
         line-height: 1.1;
         word-wrap: break-word;
+        overflow-wrap: break-word; /* Fuerza el quiebre si es necesario */
+        max-width: 100%;
     }
 
     .header-content p {
@@ -764,60 +766,58 @@ iframe {
         object-fit: cover !important;
     }
 
-    /* 5. POR QUÉ ELEGIRNOS Y SERVICIOS */
-    .coffee-group, .services-group {
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 20px;
-    }
-
-    .services-1 img {
-        width: 100%;
-        max-width: 350px;
-    }
-
-    /* AJUSTE "¿DONDE NOS ENCONTRAMOS?" PARA QUE NO SE CORTE */
+/* 5. SECCIÓN DONDE NOS ENCONTRAMOS (Arreglo de la "S") */
     .sucursal h2 {
-        font-size: 7vw !important; /* Tamaño fluido para que entre la 'S' */
-        white-space: normal;
-        text-align: center;
-        width: 100%;
+        font-size: 28px !important; /* Tamaño fijo pero seguro para A52 */
+        text-align: center !important;
+        width: 100% !important;
+        display: block !important;
+        margin: 0 auto 20px auto !important;
+        white-space: normal !important; /* Permite que el texto baje de renglón si no entra */
+        overflow: visible !important;
     }
 
     .sucursal {
         width: 100% !important;
-        padding: 0 12% !important;
+        padding: 0 5% !important; /* Bajamos el padding para dar más espacio al texto */
         box-sizing: border-box !important;
-        margin-top: 20px !important;
-        padding-bottom: 100px !important; 
-        background-color: #000000 !important;
         display: flex;
         flex-direction: column;
         align-items: center;
+        background-color: #000000 !important;
+        padding-bottom: 100px !important;
     }
 
-    iframe {
-        width: 100% !important;
-        height: 220px !important; 
-        border-radius: 10px; /* Un poco de curva queda mejor */
-        border: 2px solid #DAA520 !important; 
-        box-shadow: 0 8px 20px rgba(0,0,0,0.8);
-        display: block;
-    }
-
-    /* 6. TESTIMONIOS (CARRUSEL DE 2 CARDS) */
+    /* 6. TESTIMONIOS (Carrusel 2 Cards Centradas) */
     .carousel-container {
         width: 100% !important;
+        padding: 20px 0 !important;
+        display: flex !important;
+        justify-content: center !important;
         overflow: hidden !important;
-        padding: 20px 0;
     }
 
     .carousel-track {
-        display: flex;
-        gap: 10px;
-        padding: 0 10px;
+        display: flex !important;
+        gap: 8px !important; /* Espacio mínimo para que entren */
+        width: 95% !important; /* Contenedor casi total */
+        justify-content: center !important;
     }
 
+    .testimonio-card {
+        /* Bajamos a 46% para dejar margen real a los costados y que entren dos */
+        min-width: 46% !important; 
+        max-width: 46% !important;
+        margin: 0 !important;
+        padding: 10px !important;
+        box-sizing: border-box !important;
+        text-align: center;
+    }
+
+    .testimonio-card p {
+        font-size: 13px !important;
+        line-height: 1.3;
+    }
     .testimonio-card {
         /* Con calc(50% - 15px) entran dos cards perfectas */
         min-width: calc(50% - 15px) !important; 
